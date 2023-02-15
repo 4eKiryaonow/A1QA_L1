@@ -19,7 +19,7 @@ public class JsonReader {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
             ObjectMapper objectMapper = new ObjectMapper();
             listOfUsers = Arrays.asList(
-                    objectMapper.readValue(Paths.get(String.valueOf(bufferedReader)).toFile(), User[].class));
+                    objectMapper.readValue(bufferedReader, User[].class));
         } catch (Exception e) {
 
             throw new RuntimeException(e);
