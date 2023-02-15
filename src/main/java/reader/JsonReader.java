@@ -5,7 +5,6 @@ import entity.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,8 +17,7 @@ public class JsonReader {
 
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
             ObjectMapper objectMapper = new ObjectMapper();
-            listOfUsers = Arrays.asList(
-                    objectMapper.readValue(bufferedReader, User[].class));
+            listOfUsers = Arrays.asList(objectMapper.readValue(bufferedReader, User[].class));
         } catch (Exception e) {
 
             throw new RuntimeException(e);

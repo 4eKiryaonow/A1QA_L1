@@ -8,7 +8,8 @@ public class Address {
     private String street;
     private String building;
 
-    public Address() {}
+    public Address() {
+    }
 
     public Address(String city, String street, String building) {
         this.city = city;
