@@ -1,25 +1,25 @@
 package reader;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import entity.User;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.nio.file.Paths;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
-public class JsonReader {
+public class YamlReader {
 
-    public static List<User> getDataFromJsonFile(String path) {
+    public static List<User> getDataFromYamlFile(String path) {
         List<User> listOfUsers;
 
         try {
 
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
-            ObjectMapper objectMapper = new ObjectMapper();
-            listOfUsers = Arrays.asList(
-                    objectMapper.readValue(Paths.get(String.valueOf(bufferedReader)).toFile(), User[].class));
+            ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
+            listOfUsers = objectMapper.readValue(bufferedReader, new TypeReference<ArrayList<User>>() {
+            });
         } catch (Exception e) {
 
             throw new RuntimeException(e);
@@ -29,6 +29,4 @@ public class JsonReader {
 
 
     }
-
-
 }
