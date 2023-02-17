@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 public class MainPageObject extends AbstractPageObject {
 
 
-    protected MainPageObject(WebDriver driver) {
+    public MainPageObject(WebDriver driver) {
         super(driver);
     }
 }
