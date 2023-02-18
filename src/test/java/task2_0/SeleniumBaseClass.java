@@ -5,8 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import task2_0.webdriver.WebDriverProvider;
 
 import java.time.Duration;
 
@@ -18,16 +20,14 @@ public abstract class SeleniumBaseClass {
 
     @BeforeMethod
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        options = new ChromeOptions();
-        options.addArguments("start-maximized");
-        driver = new ChromeDriver(options);
+        driver = WebDriverProvider.getDriver();
         driver.navigate().to("https://store.steampowered.com/");
+
 
     }
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+        WebDriverProvider.closeDriver();
     }
 }

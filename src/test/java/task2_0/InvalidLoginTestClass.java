@@ -10,7 +10,7 @@ public class InvalidLoginTestClass extends SeleniumBaseClass {
     @Test
     public void InvalidLoginScenario() throws InterruptedException {
         MainPageObject mainPageObject = new MainPageObject(driver);
-        Assert.assertEquals(mainPageObject.getUrl(), "https://store.steampowered.com/");
+        Assert.assertTrue(mainPageObject.menu().getSearchFiled().isDisplayed(), "Main Page haven't been loaded");
         mainPageObject.header().clickLoginButton();
 
         LoginPageObject loginPageObject = new LoginPageObject(driver);
