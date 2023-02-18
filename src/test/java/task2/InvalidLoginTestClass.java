@@ -14,6 +14,7 @@ public class InvalidLoginTestClass extends SeleniumBaseClass {
         mainPageObject.header().clickLoginButton();
 
         LoginPageObject loginPageObject = new LoginPageObject(driver);
+        Assert.assertTrue(loginPageObject.getSubmitButton().isDisplayed(), "Login Page haven't been loaded");
         loginPageObject.login(data.getLogin(), data.getPassword());
         Assert.assertTrue(loginPageObject.getIconLoading().isDisplayed(), "Loading element is not displayed");
         Assert.assertTrue(loginPageObject.getTextErrorMessage().isDisplayed(), "Error message is not displayed");

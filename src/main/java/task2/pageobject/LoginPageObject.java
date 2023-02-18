@@ -35,5 +35,6 @@ public class LoginPageObject extends AbstractPageObject {
     public WebElement getTextErrorMessage() {
         return wait.until(ExpectedConditions.visibilityOf(textErrorMessage));
     }
+    public WebElement getSubmitButton() {return wait.until(ExpectedConditions.visibilityOf(submitButton));}
 
 }
