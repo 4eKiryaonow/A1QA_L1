@@ -3,8 +3,8 @@ package task2_1.pageobject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import task2.pageobject.component.HeaderPageComponent;
-import task2.pageobject.component.MenuPageComponent;
+import task2_1.pageobject.component.HeaderPageComponent;
+import task2_1.pageobject.component.MenuPageComponent;
 
 import java.time.Duration;
 
