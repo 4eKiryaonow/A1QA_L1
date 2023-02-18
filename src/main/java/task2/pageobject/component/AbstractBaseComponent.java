@@ -1,4 +1,4 @@
-package task2_0.pageobject.component;
+package task2.pageobject.component;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

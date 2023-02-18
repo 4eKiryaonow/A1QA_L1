@@ -1,6 +1,6 @@
-package task2_0.exception;
+package task2.exception;
 
-import task2_0.webdriver.Browser;
+import task2.webdriver.Browser;
 
 import java.util.Arrays;
 import java.util.Locale;

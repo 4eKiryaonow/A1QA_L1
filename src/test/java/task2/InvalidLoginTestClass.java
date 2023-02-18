@@ -1,14 +1,13 @@
-package task2_0;
+package task2;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import task2_0.pageobject.LoginPageObject;
-import task2_0.pageobject.MainPageObject;
+import task2.pageobject.LoginPageObject;
+import task2.pageobject.MainPageObject;
 
 public class InvalidLoginTestClass extends SeleniumBaseClass {
-
     @Test
-    public void InvalidLoginScenario() throws InterruptedException {
+    public void InvalidLoginScenario() {
         MainPageObject mainPageObject = new MainPageObject(driver);
         Assert.assertTrue(mainPageObject.menu().getSearchFiled().isDisplayed(), "Main Page haven't been loaded");
         mainPageObject.header().clickLoginButton();
@@ -16,6 +15,7 @@ public class InvalidLoginTestClass extends SeleniumBaseClass {
         LoginPageObject loginPageObject = new LoginPageObject(driver);
         loginPageObject.login("sdfsdfsdf", "sdfsdfsdf");
         Assert.assertTrue(loginPageObject.getIconLoading().isDisplayed(), "Loading element is not displayed");
+        Assert.assertTrue(loginPageObject.getTextErrorMessage().isDisplayed(), "Error message is not displayed");
 
 
 

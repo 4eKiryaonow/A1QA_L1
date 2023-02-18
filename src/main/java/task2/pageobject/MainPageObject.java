@@ -1,4 +1,4 @@
-package task2_0.pageobject;
+package task2.pageobject;
 
 import org.openqa.selenium.WebDriver;
 

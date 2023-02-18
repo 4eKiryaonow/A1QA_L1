@@ -1,4 +1,4 @@
-package task2_0.webdriver;
+package task2.webdriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import task2_0.exception.IllegalBrowserNameException;
+import task2.exception.IllegalBrowserNameException;
 
 public class WebDriverFactory {
 
@@ -62,4 +62,8 @@ public class WebDriverFactory {
         return new OperaDriver();
     }
 
+
 }
+
+
+
