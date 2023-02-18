@@ -1,6 +1,7 @@
 package task2.webdriver;
 
 import org.openqa.selenium.WebDriver;
+import task2.utils.DataManager;
 
 import java.util.Locale;
 import java.util.Objects;
@@ -15,8 +16,7 @@ public final class WebDriverProvider {
     public static WebDriver getDriver() {
 
         if (Objects.isNull(driver)) {
-            //hardcode, move in json
-            String browserName = "chrome";
+            String browserName = DataManager.getBrowser();
             driver = WebDriverFactory.createDriver(Browser.valueOf(browserName.toUpperCase(Locale.ROOT)));
 
         }

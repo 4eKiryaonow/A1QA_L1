@@ -4,16 +4,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import task2.pageobject.LoginPageObject;
 import task2.pageobject.MainPageObject;
+import task2.utils.DataManager;
 
 public class InvalidLoginTestClass extends SeleniumBaseClass {
-    @Test
-    public void InvalidLoginScenario() {
+    @Test(dataProvider = "InvalidLogin", dataProviderClass = TestDataProvider.class)
+    public void InvalidLoginScenario(DataManager data) {
         MainPageObject mainPageObject = new MainPageObject(driver);
         Assert.assertTrue(mainPageObject.menu().getSearchFiled().isDisplayed(), "Main Page haven't been loaded");
         mainPageObject.header().clickLoginButton();
 
         LoginPageObject loginPageObject = new LoginPageObject(driver);
-        loginPageObject.login("sdfsdfsdf", "sdfsdfsdf");
+        loginPageObject.login(data.getLogin(), data.getPassword());
         Assert.assertTrue(loginPageObject.getIconLoading().isDisplayed(), "Loading element is not displayed");
         Assert.assertTrue(loginPageObject.getTextErrorMessage().isDisplayed(), "Error message is not displayed");
 
