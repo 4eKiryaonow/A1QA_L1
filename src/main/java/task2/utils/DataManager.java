@@ -1,9 +1,5 @@
 package task2.utils;
 
-import org.openqa.selenium.json.Json;
-
-import java.security.PrivateKey;
-
 public class DataManager {
 
     private static final String CONFIG_DATA_PATH = "src/test/resources/config/ConfigData.json";
