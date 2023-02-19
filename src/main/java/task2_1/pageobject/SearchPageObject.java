@@ -27,11 +27,11 @@ public class SearchPageObject extends AbstractPageObject {
         return searchBox.isDisplayed();
     }
 
-    public String getFirstSearchResult() {
+    public String getSearchResult(int indexResult) {
 
         if (searchResultList.size() > 0) {
 
-            return searchResultList.get(0).findElement(
+            return searchResultList.get(indexResult).findElement(
                     By.xpath("//div[contains(@class, 'search_name')]/span")).getText();
 
         }else return String.format("No results");

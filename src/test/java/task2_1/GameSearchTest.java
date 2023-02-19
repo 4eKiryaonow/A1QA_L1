@@ -15,7 +15,7 @@ public class GameSearchTest extends BaseTestClass {
         Assert.assertTrue(searchPageObject.SearchPageIsOpen(), "Search Page has npt been opened");
         Assert.assertEquals(searchPageObject.getSearchQuery(), dataManager.getQuery(),
                 "Actual value in search box doesn't match with expected");
-        Assert.assertEquals(searchPageObject.getFirstSearchResult(), dataManager.getQuery(),
+        Assert.assertEquals(searchPageObject.getSearchResult(0), dataManager.getQuery(),
                 "The first name of position is not equal to searched name.");
 
     }
