@@ -17,4 +17,13 @@ public class DataProviderTest {
         return new Object[][] {{dataManager}};
 
     }
+
+    @DataProvider(name = "game search")
+    public static Object[][] getDataForGameSearchTest() {
+        DataManager dataManager = new DataManager();
+        dataManager.setQuery(
+                JsonReader.getDataFromJsonFile("src/test/resources/testdata/GameSearchTestData.json",
+                "query"));
+        return new Object[][] {{dataManager}};
+    }
 }

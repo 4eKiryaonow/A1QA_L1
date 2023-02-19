@@ -46,7 +46,7 @@ public abstract class AbstractPageObject {
     public FooterPageComponent footer() {return this.footer;}
     public PrivacyPolicyPageObject openPrivacyPolicyPage() {
         String oldTab = driver.getWindowHandle();
-        footer().clickByLinkPrivacyPolicy();
+        this.footer.clickByLinkPrivacyPolicy();
         ArrayList<String> newTab = new ArrayList<>(driver.getWindowHandles());
         newTab.remove(oldTab);
         driver.switchTo().window(newTab.get(0));
