@@ -5,19 +5,20 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.List;
 
 public class JsonReader {
 
     private static JSONParser reader = new JSONParser();
 
-    public static String getDataFromJsonFile(String path, String keyName) {
+    public static List<String> getDataFromJsonFile(String path, String keyName) {
 
-        String value;
+        List<String> value;
         try {
 
             BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
             JSONObject jsonObject = (JSONObject) reader.parse(bufferedReader);
-            value = (String) jsonObject.get(keyName);
+            value = (List<String>) jsonObject.get(keyName);
 
         } catch (Exception e) {
 

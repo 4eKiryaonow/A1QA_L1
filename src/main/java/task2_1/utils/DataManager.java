@@ -1,8 +1,20 @@
 package task2_1.utils;
 
+import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
+
 public class DataManager {
 
-    private static final String CONFIG_DATA_PATH = "src/test/resources/config/ConfigData.json";
-    private static final String TEST_DATA_PATH = "src/test/resources/testdata/TestData.json";
+    private List<String> languages;
 
+    public List<String> getLanguages() {
+        return languages;
+    }
+    public void setLanguages(List<String> languages) {
+        this.languages = languages
+                .stream()
+                .map(language ->language.toLowerCase(Locale.ROOT))
+                .collect(Collectors.toList());
+    }
 }
