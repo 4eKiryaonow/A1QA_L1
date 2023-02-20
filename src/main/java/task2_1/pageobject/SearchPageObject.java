@@ -33,14 +33,14 @@ public class SearchPageObject extends AbstractPageObject {
         return searchBox.isDisplayed();
     }
 
-    public String getSearchResult(int indexResult) {
+    public String getTitleOfSearchResult(int indexResult) {
 
-        if (searchResultList.size() > 0) {
+        if (!searchResultList.isEmpty()) {
 
             return searchResultList.get(indexResult).findElement(
-                    By.xpath("//div[contains(@class, 'search_name')]/span")).getText();
+                    By.cssSelector("div.search_name > span.title")).getText();
 
-        }else return String.format("No results");
+        }else return "No results";
 
     }
 
@@ -57,7 +57,9 @@ public class SearchPageObject extends AbstractPageObject {
                         .collect(Collectors.toList()));
         try {
             gameResult.setReviewSummaryResult(element.findElement(
-                    By.cssSelector("span.search_review_summary")).getAttribute("data-tooltip-html"));
+                    By.cssSelector("span.search_review_summary"))
+                    .getAttribute("data-tooltip-html")
+                    .replace("<br>", " "));
         }catch (NoSuchElementException e) {
 
             gameResult.setReviewSummaryResult(null);
@@ -75,18 +77,31 @@ public class SearchPageObject extends AbstractPageObject {
                 .findElements(By.cssSelector("span.platform_img"))
                 .stream()
                 .map(e -> e.getAttribute("class"))
-                .map(e -> e.replace("platform_img ", ""))
+                .map(e -> e.replace("platform_img", "").trim())
                 .collect(Collectors.toList());
 
     }
 
-    public void printSearchResults() {
+    public List<GameResult> getSearchResults() {
 
-        for (int i=0; i < searchResultList.size(); i++) {
+        return searchResultList
+                .stream()
+                .map(this::getGameResult)
+                .collect(Collectors.toList());
 
-            System.out.println(getGameResult(searchResultList.get(i)));
-        }
+    }
+    public List<GameResult> getFirstAndSecondResults() {
 
+        List<GameResult> gameResultList = new ArrayList<>();
+        gameResultList.add(getGameResultByIndex(0));
+        gameResultList.add(getGameResultByIndex(1));
+        return gameResultList;
+
+    }
+
+    public GameResult getGameResultByIndex(int index) {
+
+        return getGameResult(searchResultList.get(index));
     }
 
 }

@@ -10,8 +10,9 @@ public class DataProviderTest {
     public static Object [][] getDataForPrivacyPolicy() {
 
         DataManager dataManager = new DataManager();
+        String path = "src/test/resources/testdata/PrivacyPolicyTestData.json";
         dataManager.setLanguages(
-                JsonReader.getDataFromJsonFile("src/test/resources/testdata/PrivacyPolicyTestData.json",
+                JsonReader.getListFromJsonFile(path,
                         "languages"));
 
         return new Object[][] {{dataManager}};
@@ -21,9 +22,15 @@ public class DataProviderTest {
     @DataProvider(name = "game search")
     public static Object[][] getDataForGameSearchTest() {
         DataManager dataManager = new DataManager();
+        String pathTestData = "src/test/resources/testdata/GameSearchTestData.json";
+        String pathSearchResults = "src/test/resources/testdata/GameSearchResult.json";
+
         dataManager.setQuery(
-                JsonReader.getDataFromJsonFile("src/test/resources/testdata/GameSearchTestData.json",
-                "query"));
+                JsonReader.getStringFromJsonFile(pathTestData,
+                        "query"));
+        dataManager.setPathFileToWrite(pathSearchResults);
+        dataManager.setValueOfCompResults(Integer.parseInt(
+                JsonReader.getStringFromJsonFile(pathTestData,"comparing-results")));
         return new Object[][] {{dataManager}};
     }
 }

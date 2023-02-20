@@ -23,6 +23,7 @@ public class MenuPageComponent extends AbstractBaseComponent {
 
     public SearchPageObject performSearchQuery(String query) {
 
+        wait.until(ExpectedConditions.visibilityOf(searchFiled)).clear();
         wait.until(ExpectedConditions.visibilityOf(searchFiled)).sendKeys(query);
         wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
         return new SearchPageObject(driver);

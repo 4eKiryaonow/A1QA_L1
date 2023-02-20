@@ -8,13 +8,15 @@ public class DataManager {
 
     private List<String> languages;
     private String query;
+    private String pathFileToWrite;
+    private int valueOfCompResults;
 
     public String getQuery() {
         return query;
     }
 
-    public void setQuery(List<String> query) {
-        this.query = query.get(0);
+    public void setQuery(String query) {
+        this.query = query;
     }
 
     public List<String> getLanguages() {
@@ -25,5 +27,20 @@ public class DataManager {
                 .stream()
                 .map(language ->language.toLowerCase(Locale.ROOT))
                 .collect(Collectors.toList());
+    }
+
+    public String getPathFileToWrite() {
+        return pathFileToWrite;
+    }
+    public void setPathFileToWrite(String pathFileToWrite) {
+        this.pathFileToWrite = pathFileToWrite;
+    }
+
+    public int getValueOfCompResults() {
+        return valueOfCompResults;
+    }
+
+    public void setValueOfCompResults(int valueOfCompResults) {
+        this.valueOfCompResults = valueOfCompResults;
     }
 }

@@ -5,9 +5,10 @@ import lombok.*;
 import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Getter
 @Setter
+@EqualsAndHashCode
+@ToString
 public class GameResult {
     private String name;
     private List<GamePlatform> gamePlatforms;

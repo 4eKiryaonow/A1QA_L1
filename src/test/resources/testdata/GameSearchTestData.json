@@ -1,3 +1,4 @@
 {
-  "query" : ["Dota 2"]
+  "query" : "Dota 2",
+  "comparing-results" : 2
 }
