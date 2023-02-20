@@ -23,7 +23,7 @@ public class DataProviderTest {
     public static Object[][] getDataForGameSearchTest() {
         DataManager dataManager = new DataManager();
         String pathTestData = "src/test/resources/testdata/GameSearchTestData.json";
-        String pathSearchResults = "src/test/resources/testdata/GameSearchResult.json";
+        String pathSearchResults = "src/test/resources/testdata/GameSearchResults.json";
 
         dataManager.setQuery(
                 JsonReader.getStringFromJsonFile(pathTestData,
