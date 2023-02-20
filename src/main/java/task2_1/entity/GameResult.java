@@ -1,7 +1,13 @@
 package task2_1.entity;
 
-import java.util.List;
+import lombok.*;
 
+import java.util.List;
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Getter
+@Setter
 public class GameResult {
     private String name;
     private List<GamePlatform> gamePlatforms;

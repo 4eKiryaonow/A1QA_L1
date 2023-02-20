@@ -9,7 +9,7 @@ import task2_1.utils.DataManager;
 public class GameSearchTest extends BaseTestClass {
 
     @Test(dataProvider = "game search", dataProviderClass = DataProviderTest.class)
-    public void gameSearchTest(DataManager dataManager) {
+    public void gameSearchTest(DataManager dataManager) throws InterruptedException {
         MainPageObject mainPageObject = new MainPageObject(driver);
         SearchPageObject searchPageObject = mainPageObject.menu().performSearchQuery(dataManager.getQuery());
         Assert.assertTrue(searchPageObject.SearchPageIsOpen(), "Search Page has npt been opened");
@@ -17,6 +17,8 @@ public class GameSearchTest extends BaseTestClass {
                 "Actual value in search box doesn't match with expected");
         Assert.assertEquals(searchPageObject.getSearchResult(0), dataManager.getQuery(),
                 "The first name of position is not equal to searched name.");
+
+        searchPageObject.printSearchResults();
 
     }
 }

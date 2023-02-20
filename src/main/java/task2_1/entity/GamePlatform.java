@@ -7,6 +7,6 @@ public enum GamePlatform {
     LINUX,
     MUSIC,
     STREAMINGVIDEO,
-    STREAMINVIDEOSERIES,
+    STREAMINGVIDEOSERIES,
 
 }
