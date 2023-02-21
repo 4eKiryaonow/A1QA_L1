@@ -22,7 +22,6 @@ public class GameSearchTest extends BaseTestClass {
                 "Actual value in the search box doesn't match with expected");
         Assert.assertEquals(searchPageObject.getTitleOfSearchResult(0), dataManager.getQuery(),
                 "The first name of position is not equal to searched name.");
-        List<GameResult> gameResultFirstList = searchPageObject.getSearchResults();
 
         JsonReader.writeSearchResult(dataManager.getPathFileToWrite(), searchPageObject.getFirstAndSecondResults());
 
@@ -31,12 +30,13 @@ public class GameSearchTest extends BaseTestClass {
         searchPageObject = searchPageObject.menu().performSearchQuery(titleOfSecondResult);
         Assert.assertEquals(searchPageObject.getSearchQuery(), titleOfSecondResult,
                 "Actual value in the search box doesn't match with expected");
+
         List<GameResult> gameResultSecondList = searchPageObject.getSearchResults();
 
         Assert.assertEquals(
-                gameResultSecondList
+                JsonReader.readSearchResult(dataManager.getPathFileToRead())
                         .stream()
-                        .filter(gameResultFirstList::contains)
+                        .filter(gameResultSecondList::contains)
                         .count(),
                 dataManager.getValueOfCompResults(),
                 "Result should contains 2 stored items form previous result"

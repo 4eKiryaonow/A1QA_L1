@@ -10,6 +10,7 @@ public class DataManager {
     private String query;
     private String pathFileToWrite;
     private int valueOfCompResults;
+    private String pathFileToRead;
 
     public String getQuery() {
         return query;
@@ -45,4 +46,8 @@ public class DataManager {
     public void setValueOfCompResults(int valueOfCompResults) {
         this.valueOfCompResults = valueOfCompResults;
     }
+
+    public String getPathFileToRead() {return pathFileToRead;}
+
+    public void setPathFileToRead(String pathFileToRead) {this.pathFileToRead = pathFileToRead;}
 }

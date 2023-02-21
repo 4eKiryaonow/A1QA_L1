@@ -1,8 +1,10 @@
 package task2_1.utils;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import task2_1.entity.GameResult;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -62,4 +64,23 @@ public class JsonReader {
         }
 
     }
+
+    public static List<GameResult> readSearchResult(String path) {
+
+        List<GameResult> result;
+
+        try {
+
+            File file = new File(path);
+            ObjectMapper om = new ObjectMapper();
+            result = om.readValue(file, new TypeReference<List<GameResult>>() {
+            });
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+
+
+    }
+
 }

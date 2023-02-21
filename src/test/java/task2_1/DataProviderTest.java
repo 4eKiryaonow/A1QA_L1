@@ -31,6 +31,7 @@ public class DataProviderTest {
         dataManager.setPathFileToWrite(pathSearchResults);
         dataManager.setValueOfCompResults(Integer.parseInt(
                 JsonReader.getStringFromJsonFile(pathTestData, "comparing-results")));
+        dataManager.setPathFileToRead(pathSearchResults);
         return new Object[][]{{dataManager}};
     }
 }
