@@ -7,7 +7,7 @@ import task2_1.utils.JsonReader;
 public class DataProviderTest {
 
     @DataProvider(name = "privacy policy")
-    public static Object [][] getDataForPrivacyPolicy() {
+    public static Object[][] getDataForPrivacyPolicy() {
 
         DataManager dataManager = new DataManager();
         String path = "src/test/resources/testdata/PrivacyPolicyTestData.json";
@@ -15,7 +15,7 @@ public class DataProviderTest {
                 JsonReader.getListFromJsonFile(path,
                         "languages"));
 
-        return new Object[][] {{dataManager}};
+        return new Object[][]{{dataManager}};
 
     }
 
@@ -30,7 +30,7 @@ public class DataProviderTest {
                         "query"));
         dataManager.setPathFileToWrite(pathSearchResults);
         dataManager.setValueOfCompResults(Integer.parseInt(
-                JsonReader.getStringFromJsonFile(pathTestData,"comparing-results")));
-        return new Object[][] {{dataManager}};
+                JsonReader.getStringFromJsonFile(pathTestData, "comparing-results")));
+        return new Object[][]{{dataManager}};
     }
 }

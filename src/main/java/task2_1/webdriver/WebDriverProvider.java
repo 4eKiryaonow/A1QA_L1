@@ -16,7 +16,7 @@ public final class WebDriverProvider {
     public static WebDriver getDriver() {
 
         if (Objects.isNull(driver)) {
-            String browserName = JsonReader.getStringFromJsonFile(JsonReader.PATH_TO_CONFIG,"browser");
+            String browserName = JsonReader.getStringFromJsonFile(JsonReader.PATH_TO_CONFIG, "browser");
             driver = WebDriverFactory.createDriver(Browser.valueOf(browserName.toUpperCase(Locale.ROOT)));
 
         }

@@ -22,16 +22,18 @@ public class DataManager {
     public List<String> getLanguages() {
         return languages;
     }
+
     public void setLanguages(List<String> languages) {
         this.languages = languages
                 .stream()
-                .map(language ->language.toLowerCase(Locale.ROOT))
+                .map(language -> language.toLowerCase(Locale.ROOT))
                 .collect(Collectors.toList());
     }
 
     public String getPathFileToWrite() {
         return pathFileToWrite;
     }
+
     public void setPathFileToWrite(String pathFileToWrite) {
         this.pathFileToWrite = pathFileToWrite;
     }

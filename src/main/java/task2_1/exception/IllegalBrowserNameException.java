@@ -1,4 +1,5 @@
 package task2_1.exception;
+
 import task2_1.webdriver.Browser;
 
 import java.util.Arrays;

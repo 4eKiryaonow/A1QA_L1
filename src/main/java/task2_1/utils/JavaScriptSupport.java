@@ -7,7 +7,8 @@ import task2_1.webdriver.WebDriverProvider;
 public class JavaScriptSupport {
 
     private static JavascriptExecutor jse;
-    public static void pageScrollDown(WebElement element){
+
+    public static void pageScrollDown(WebElement element) {
         jse = (JavascriptExecutor) WebDriverProvider.getDriver();
         jse.executeScript("arguments[0].scrollIntoView(true);", element);
     }

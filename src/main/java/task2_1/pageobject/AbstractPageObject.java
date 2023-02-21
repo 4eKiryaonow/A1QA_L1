@@ -36,6 +36,7 @@ public abstract class AbstractPageObject {
     public String getUrl() {
         return this.url;
     }
+
     public HeaderPageComponent header() {
         return this.header;
     }
@@ -43,7 +44,11 @@ public abstract class AbstractPageObject {
     public MenuPageComponent menu() {
         return this.menu;
     }
-    public FooterPageComponent footer() {return this.footer;}
+
+    public FooterPageComponent footer() {
+        return this.footer;
+    }
+
     public PrivacyPolicyPageObject openPrivacyPolicyPage() {
         String oldTab = driver.getWindowHandle();
         this.footer.clickByLinkPrivacyPolicy();

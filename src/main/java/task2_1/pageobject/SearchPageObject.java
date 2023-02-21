@@ -28,6 +28,7 @@ public class SearchPageObject extends AbstractPageObject {
 
         return searchBox.getAttribute("value");
     }
+
     public boolean SearchPageIsOpen() {
 
         return searchBox.isDisplayed();
@@ -40,7 +41,7 @@ public class SearchPageObject extends AbstractPageObject {
             return searchResultList.get(indexResult).findElement(
                     By.cssSelector("div.search_name > span.title")).getText();
 
-        }else return "No results";
+        } else return "No results";
 
     }
 
@@ -57,10 +58,10 @@ public class SearchPageObject extends AbstractPageObject {
                         .collect(Collectors.toList()));
         try {
             gameResult.setReviewSummaryResult(element.findElement(
-                    By.cssSelector("span.search_review_summary"))
+                            By.cssSelector("span.search_review_summary"))
                     .getAttribute("data-tooltip-html")
                     .replace("<br>", " "));
-        }catch (NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
 
             gameResult.setReviewSummaryResult(null);
         }
@@ -90,6 +91,7 @@ public class SearchPageObject extends AbstractPageObject {
                 .collect(Collectors.toList());
 
     }
+
     public List<GameResult> getFirstAndSecondResults() {
 
         List<GameResult> gameResultList = new ArrayList<>();

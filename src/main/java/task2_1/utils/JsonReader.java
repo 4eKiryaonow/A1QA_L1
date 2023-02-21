@@ -11,7 +11,7 @@ import java.util.List;
 
 public class JsonReader {
 
-public static final String PATH_TO_CONFIG = "src/test/resources/configdata/config.json";
+    public static final String PATH_TO_CONFIG = "src/test/resources/configdata/config.json";
     private static JSONParser reader = new JSONParser();
 
     public static List<String> getListFromJsonFile(String path, String keyName) {

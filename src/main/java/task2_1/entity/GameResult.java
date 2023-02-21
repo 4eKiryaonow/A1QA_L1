@@ -3,6 +3,7 @@ package task2_1.entity;
 import lombok.*;
 
 import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

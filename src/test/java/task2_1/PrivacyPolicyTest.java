@@ -22,8 +22,8 @@ public class PrivacyPolicyTest extends BaseTestClass {
                 "List of languages on the Policy Page doesn't match with test data: \n" +
                         dataManager.getLanguages());
         Assert.assertTrue(privacyPolicyPageObject
-                .getTextOfPrivacyPolicy()
-                .contains(String.valueOf(LocalDate.now().getYear())),
+                        .getTextOfPrivacyPolicy()
+                        .contains(String.valueOf(LocalDate.now().getYear())),
                 "The Policy revision is not signed in the current year");
     }
 }
