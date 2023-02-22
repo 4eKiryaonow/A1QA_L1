@@ -12,6 +12,69 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <testng.version>7.4.0</testng.version>
+        <jackson-databind.version>2.14.0-rc3</jackson-databind.version>
+        <jackson-dataformat-yaml.version>2.14.0</jackson-dataformat-yaml.version>
+        <selenium-java.version>4.1.1</selenium-java.version>
+        <webdrivermanager.version>5.0.2</webdrivermanager.version>
+        <testng.suite.file>${testng.configs.path}/testNG.xml</testng.suite.file>
+        <testng.configs.path>${project.build.testOutputDirectory}</testng.configs.path>
     </properties>
-    
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>${jackson-dataformat-yaml.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>Task3.1</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/Task3_1TestNG.xml</testng.suite.file>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>
