@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import task3_1.driver.WebDriverProvider;
+import task3_1.utils.ConditionalWait;
 import task3_1.utils.JsUtil;
 
 import java.time.Duration;
@@ -34,7 +35,8 @@ public abstract class BaseElement {
     public void clickElement() {
 
         JsUtil.pageScrollDown(locator);
-        wait.until(ExpectedConditions.elementToBeClickable(findElement())).click();
+        ConditionalWait.waitToBeClickable(locator);
+        findElement().click();
     }
 
     public boolean isElementDisplayed() {

@@ -1,6 +1,7 @@
 package task3_1.driver;
 
 import org.openqa.selenium.WebDriver;
+import task3_1.utils.ConfigManager;
 import task3_1.utils.JsonReader;
 
 import java.util.Locale;
@@ -16,7 +17,7 @@ public final class WebDriverProvider {
     public static WebDriver getDriver() {
 
         if (Objects.isNull(driver)) {
-            String browserName = JsonReader.getStringFromJsonFile(JsonReader.PATH_TO_CONFIG, "browser");
+            String browserName = ConfigManager.getBrowser();
             driver = WebDriverFactory.createDriver(Browser.valueOf(browserName.toUpperCase(Locale.ROOT)));
 
         }

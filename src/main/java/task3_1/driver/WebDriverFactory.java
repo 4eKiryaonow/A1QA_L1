@@ -11,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import task3_1.exception.IllegalBrowserNameException;
-import task3_1.utils.JsonReader;
+import task3_1.utils.ConfigManager;
 
 public class WebDriverFactory {
 
@@ -70,26 +70,26 @@ public class WebDriverFactory {
     private static ChromeOptions getChromeOptions() {
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments(JsonReader.getListFromJsonFile(JsonReader.PATH_TO_CONFIG,"options"));
+        options.addArguments(ConfigManager.getOptions());
         return options;
 
     }
 
     private static FirefoxOptions getFirefoxOptions() {
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments(JsonReader.getListFromJsonFile(JsonReader.PATH_TO_CONFIG, "options"));
+        options.addArguments(ConfigManager.getOptions());
         return options;
     }
 
     private static EdgeOptions getEdgeOptions() {
         EdgeOptions options = new EdgeOptions();
-        options.addArguments(JsonReader.getListFromJsonFile(JsonReader.PATH_TO_CONFIG, "options"));
+        options.addArguments(ConfigManager.getOptions());
         return options;
     }
 
     private static OperaOptions getOperaOptions() {
         OperaOptions options = new OperaOptions();
-        options.addArguments(JsonReader.getListFromJsonFile(JsonReader.PATH_TO_CONFIG, "options"));
+        options.addArguments(ConfigManager.getOptions());
         return options;
     }
 }
