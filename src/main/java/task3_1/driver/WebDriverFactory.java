@@ -70,7 +70,7 @@ public class WebDriverFactory {
     private static ChromeOptions getChromeOptions() {
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments(JsonReader.getListFromJsonFile(JsonReader.PATH_TO_CONFIG, "options"));
+        options.addArguments(JsonReader.getListFromJsonFile(JsonReader.PATH_TO_CONFIG,"options"));
         return options;
 
     }

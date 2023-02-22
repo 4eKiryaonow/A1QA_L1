@@ -10,12 +10,19 @@ public class MainPageObject extends BaseForm {
     private static Label homePageLabel = new Label(By.cssSelector(
             "div.home-banner img.banner-image"), "HomeBanner");
     private Button allertsFrameWindowsBtn = new Button(
-            By.xpath("//div[@class = 'card-body']//*[contains(text(), 'Alerts, Frame & Windows')]"),
+            By.xpath("//h5[contains(text(), 'Alerts')]//parent::div"),
             "AllertsFrameWindowsButton");
 
     public MainPageObject() {
 
         super(homePageLabel, "MainPage");
+    }
+
+    public AlertsFrameWindowsPageObject clickAlertsFrameWindowsBtn() {
+
+        allertsFrameWindowsBtn.clickElement();
+
+        return new AlertsFrameWindowsPageObject();
     }
 
 

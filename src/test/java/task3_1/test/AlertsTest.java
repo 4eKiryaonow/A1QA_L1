@@ -1,4 +1,19 @@
 package task3_1.test;
 
-public class AlertsTest {
+import org.testng.annotations.Test;
+import task3_1.pageobject.AlertsFrameWindowsPageObject;
+import task3_1.pageobject.MainPageObject;
+
+public class AlertsTest extends BaseTestClass {
+
+    @Test
+    public void AlertsTestScenario() throws InterruptedException {
+
+        MainPageObject mainPageObject = new MainPageObject();
+        AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = mainPageObject.clickAlertsFrameWindowsBtn();
+
+
+
+
+    }
 }

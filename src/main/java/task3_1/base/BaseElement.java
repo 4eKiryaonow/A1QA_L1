@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import task3_1.driver.WebDriverProvider;
+import task3_1.utils.JsUtil;
+
+import java.time.Duration;
 
 public abstract class BaseElement {
 
@@ -18,17 +21,20 @@ public abstract class BaseElement {
         this.locator = locator;
         this.elementName = elementName;
         driver = WebDriverProvider.getDriver();
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     }
 
     public WebElement findElement() {
+
         return this.driver.findElement(locator);
     }
 
 
     public void clickElement() {
 
-        wait.until(ExpectedConditions.elementToBeClickable(this.findElement())).click();
+        JsUtil.pageScrollDown(locator);
+        wait.until(ExpectedConditions.elementToBeClickable(findElement())).click();
     }
 
     public boolean isElementDisplayed() {
