@@ -1,6 +1,6 @@
 {
   "browser" : "chrome",
   "url" : "https://demoqa.com/",
-  "options" : ["--incognito", "start-maximized"],
+  "options" : ["start-maximized"],
   "waitDuration" : "10"
 }

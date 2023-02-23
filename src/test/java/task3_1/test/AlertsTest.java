@@ -11,6 +11,8 @@ public class AlertsTest extends BaseTestClass {
 
         MainPageObject mainPageObject = new MainPageObject();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = mainPageObject.clickAlertsFrameWindowsBtn();
+        alertsFrameWindowsPageObject.LeftPanel().clickAlertsBtn();
+        Thread.sleep(1000);
 
 
 
