@@ -10,6 +10,11 @@ public class AlertsPageObject extends BaseForm {
     private static Label labelAlerts = new Label(
             By.xpath("//div[@class='main-header'][contains(text(), 'Alerts')]"),
             "labelAlerts");
+    private Button toSeeAlertBtn = new Button(By.id("alertButton"), "ToSeeAlertBtn");
+    private Button timerAlertButton = new Button(By.id("timerAlertButton"), "TimerAlertButton");
+    private Button confirmBoxBtn = new Button(By.id("confirmButton"), "Confirm Button");
+    private Button promptBoxBtn = new Button(By.id("promtButton"), "PromptButton");
+
 
 
     public AlertsPageObject() {
