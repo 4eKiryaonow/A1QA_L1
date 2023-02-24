@@ -15,6 +15,8 @@ public class AlertsPageObject extends BaseForm {
     private Button timerAlertButton = new Button(By.id("timerAlertButton"), "TimerAlertButton");
     private Button confirmBoxBtn = new Button(By.id("confirmButton"), "Confirm Button");
     private Button promptBoxBtn = new Button(By.id("promtButton"), "PromptButton");
+    private Label resultOfConfirmBoxBtn = new Label(By.id("confirmResult"),"ConfirmResultConfirmBox");
+    private Label resultOfPromptBoxBtn = new Label(By.id("promptResult"),"ConfirmResultPromptBoxBtn");
 
 
 
@@ -36,6 +38,14 @@ public class AlertsPageObject extends BaseForm {
     public void clickPromptBoxBtn() {
 
         promptBoxBtn.clickElement();
+    }
+    public String getResultConfirmBoxBtn() {
+
+        return resultOfConfirmBoxBtn.getTextOfElement();
+    }
+    public String getResultPromptBoxBtn() {
+
+        return resultOfPromptBoxBtn.getTextOfElement();
     }
 
 

@@ -18,9 +18,9 @@ public class AlertUtil {
         ConditionalWait.alertIsPresent().dismiss();
     }
 
-    public static void getAlertText() {
+    public static String getAlertText() {
 
-        ConditionalWait.alertIsPresent().getText();
+        return ConditionalWait.alertIsPresent().getText();
     }
 
     public static void SendTextToAlert(String text) {
