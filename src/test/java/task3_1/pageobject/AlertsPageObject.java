@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import task3_1.base.BaseForm;
 import task3_1.element.Button;
 import task3_1.element.Label;
+import task3_1.utils.ConditionalWait;
 
 public class AlertsPageObject extends BaseForm {
 
@@ -20,6 +21,21 @@ public class AlertsPageObject extends BaseForm {
     public AlertsPageObject() {
 
         super(labelAlerts,"AlertsPageObject");
+    }
+    public void clickToSeeAlertBtn() {
+
+        toSeeAlertBtn.clickElement();
+    }
+
+    public AlertsPageObject clickConfirmBoxBtn() {
+
+        confirmBoxBtn.clickElement();
+        return this;
+
+    }
+    public void clickPromptBoxBtn() {
+
+        promptBoxBtn.clickElement();
     }
 
 
