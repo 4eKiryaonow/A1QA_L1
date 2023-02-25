@@ -1,0 +1,7 @@
+{
+  "seeAlertText" : "You clicked a button",
+  "confirmAlertText" : "Do you confirm action?",
+  "resultConfirmAlertText" : "You selected Ok",
+  "promptBoxAlertText" : "Please enter your name"
+
+}

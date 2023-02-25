@@ -5,7 +5,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import task3_1.driver.WebDriverProvider;
 import task3_1.utils.ConfigManager;
-import task3_1.utils.JsonReader;
 
 public class BaseTestClass {
 
