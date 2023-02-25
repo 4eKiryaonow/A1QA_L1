@@ -14,7 +14,6 @@ public class AlertsTest extends BaseTestClass {
     @Test(dataProvider = "Alerts test", dataProviderClass = TestDataProvider.class)
     public void AlertsTestScenario(TestDataManager data) throws InterruptedException {
 
-        System.out.println("Step 1. Navigate to main page");
         MainPageObject mainPageObject = new MainPageObject();
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main page hasn't been opened");
 

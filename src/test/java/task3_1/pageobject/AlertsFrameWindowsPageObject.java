@@ -14,7 +14,7 @@ public class AlertsFrameWindowsPageObject extends BaseForm {
 
     public AlertsFrameWindowsPageObject() {
 
-        super(AlertFrameWindowsLabel, "AlertFrameWindowsPage");
+        super(AlertFrameWindowsLabel, "AlertFrameWindowsPageObject");
         this.LeftPanel = new LeftPanelComponent();
     }
 

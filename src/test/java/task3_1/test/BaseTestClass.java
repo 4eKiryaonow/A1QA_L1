@@ -13,6 +13,7 @@ public class BaseTestClass {
     @BeforeMethod
     public void setUp() {
         driver = WebDriverProvider.getDriver();
+        System.out.println("Step 1. Navigate to main page");
         driver.navigate().to(ConfigManager.getURL());
 
     }
