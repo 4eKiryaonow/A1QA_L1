@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import task2_1.pageobject.component.FooterPageComponent;
 import task2_1.pageobject.component.HeaderPageComponent;
 import task2_1.pageobject.component.MenuPageComponent;
+import task2_1.utils.BrowserUtils;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -46,11 +47,8 @@ public abstract class AbstractPageObject {
     }
 
     public PrivacyPolicyPageObject openPrivacyPolicyPage() {
-        String oldTab = driver.getWindowHandle();
         this.footer.clickByLinkPrivacyPolicy();
-        ArrayList<String> newTab = new ArrayList<>(driver.getWindowHandles());
-        newTab.remove(oldTab);
-        driver.switchTo().window(newTab.get(0));
+        BrowserUtils.switchToNewTab();
         return new PrivacyPolicyPageObject(driver);
 
     }
