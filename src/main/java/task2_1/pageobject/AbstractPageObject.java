@@ -33,10 +33,6 @@ public abstract class AbstractPageObject {
 
     }
 
-    public String getUrl() {
-        return this.url;
-    }
-
     public HeaderPageComponent header() {
         return this.header;
     }
