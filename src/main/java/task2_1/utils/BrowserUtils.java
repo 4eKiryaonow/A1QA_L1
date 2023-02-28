@@ -20,6 +20,10 @@ public class BrowserUtils {
         WebDriverProvider.getDriver().switchTo().window(newTab.get(0));
 
     }
+    public static int getWaitDuration() {
+
+        return Integer.parseInt(JsonReader.getStringFromJsonFile(JsonReader.PATH_TO_CONFIG, "duration"));
+    }
 
 
 
