@@ -1,5 +1,6 @@
 package task2_1.pageobject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,12 +13,9 @@ import java.util.stream.Collectors;
 
 public class PrivacyPolicyPageObject extends AbstractPageObject {
 
-    @FindBy(css = "#languages a img")
-    private List<WebElement> languagesList;
-    @FindBy(id = "languages")
-    private WebElement flags;
-    @FindBy(id = "newsColumn")
-    private WebElement textColumn;
+    private List<WebElement> languagesList = driver.findElements(By.cssSelector("#languages a img"));
+    private WebElement flags = driver.findElement(By.id("languages"));
+    private WebElement textColumn = driver.findElement(By.id("newsColumn"));
 
     public PrivacyPolicyPageObject(WebDriver driver) {
         super(driver);
