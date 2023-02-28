@@ -1,5 +1,6 @@
 package task2_1.pageobject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,16 +8,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPageObject extends AbstractPageObject {
 
-    @FindBy(xpath = "//input[@type= 'text']")
-    private WebElement loginField;
-    @FindBy(xpath = "//input[@type= 'password']")
-    private WebElement passwordField;
-    @FindBy(xpath = "//button[@type= 'submit']")
-    private WebElement submitButton;
-    @FindBy(xpath = "//button[contains(@class, 'SubmitButton')]/descendant::div[contains(@class, 'LoadingSpinner')]")
-    private WebElement iconLoading;
-    @FindBy(xpath = "//div[contains(@class, 'newlogindialog_FormError')]")
-    private WebElement textErrorMessage;
+    private WebElement loginField = driver.findElement(By.xpath("//input[@type= 'text']"));
+    private WebElement passwordField = driver.findElement(By.xpath("//input[@type= 'password']"));
+    private WebElement submitButton = driver.findElement(By.xpath("//button[@type= 'submit']"));
+    private WebElement iconLoading = driver.findElement(
+            By.xpath("//button[contains(@class, 'SubmitButton')]/descendant::div[contains(@class, 'LoadingSpinner')]"));
+    private WebElement textErrorMessage = driver.findElement(
+            By.xpath("//div[contains(@class, 'newlogindialog_FormError')]"));
 
     public LoginPageObject(WebDriver driver) {
         super(driver);

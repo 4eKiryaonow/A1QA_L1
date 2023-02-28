@@ -27,7 +27,6 @@ public abstract class AbstractPageObject {
         this.title = this.driver.getTitle();
         this.url = this.driver.getCurrentUrl();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        PageFactory.initElements(this.driver, this);
         header = new HeaderPageComponent(driver);
         menu = new MenuPageComponent(driver);
         footer = new FooterPageComponent(driver);
