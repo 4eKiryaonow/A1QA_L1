@@ -13,7 +13,9 @@ public class PrivacyPolicyTest extends BaseTestClass {
     @Test(dataProvider = "privacy policy", dataProviderClass = DataProviderTest.class)
     public void privacyPolicyTest(DataManager dataManager) {
         MainPageObject mainPageObject = new MainPageObject(driver);
-        PrivacyPolicyPageObject privacyPolicyPageObject = mainPageObject.openPrivacyPolicyPage();
+        mainPageObject.openPrivacyPolicyPage();
+        PrivacyPolicyPageObject privacyPolicyPageObject = new PrivacyPolicyPageObject(driver);
+
 
         Assert.assertTrue(privacyPolicyPageObject.PrivacyPolicyIsOpened(),
                 "Privacy Policy Page is not opened" +

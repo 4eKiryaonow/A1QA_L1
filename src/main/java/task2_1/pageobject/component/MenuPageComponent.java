@@ -15,16 +15,15 @@ public class MenuPageComponent extends AbstractBaseComponent {
         super(driver);
     }
 
-    public WebElement getSearchFiled() {
+    private WebElement getSearchFiled() {
         return searchFiled;
     }
 
-    public SearchPageObject performSearchQuery(String query) {
+    public void performSearchQuery(String query) {
 
         wait.until(ExpectedConditions.visibilityOf(searchFiled)).clear();
         wait.until(ExpectedConditions.visibilityOf(searchFiled)).sendKeys(query);
         wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
-        return new SearchPageObject(driver);
     }
 
 }

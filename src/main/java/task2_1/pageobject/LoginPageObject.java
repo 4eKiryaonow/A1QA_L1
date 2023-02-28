@@ -26,13 +26,13 @@ public class LoginPageObject extends AbstractPageObject {
         wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
     }
 
-    public WebElement getIconLoading() {
+    private WebElement getIconLoading() {
         return iconLoading;
     }
 
-    public WebElement getTextErrorMessage() {
+    private WebElement getTextErrorMessage() {
         return wait.until(ExpectedConditions.visibilityOf(textErrorMessage));
     }
-    public WebElement getSubmitButton() {return wait.until(ExpectedConditions.visibilityOf(submitButton));}
+    private WebElement getSubmitButton() {return wait.until(ExpectedConditions.visibilityOf(submitButton));}
 
 }

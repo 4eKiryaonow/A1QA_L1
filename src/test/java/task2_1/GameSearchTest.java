@@ -15,7 +15,8 @@ public class GameSearchTest extends BaseTestClass {
     @Test(dataProvider = "game search", dataProviderClass = DataProviderTest.class)
     public void gameSearchTest(DataManager dataManager) {
         MainPageObject mainPageObject = new MainPageObject(driver);
-        SearchPageObject searchPageObject = mainPageObject.menu().performSearchQuery(dataManager.getQuery());
+        mainPageObject.menu().performSearchQuery(dataManager.getQuery());
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
 
         Assert.assertTrue(searchPageObject.SearchPageIsOpen(), "Search Page has not been opened");
         Assert.assertEquals(searchPageObject.getSearchQuery(), dataManager.getQuery(),
@@ -27,7 +28,8 @@ public class GameSearchTest extends BaseTestClass {
 
         String titleOfSecondResult = searchPageObject.getTitleOfSearchResult(1);
 
-        searchPageObject = searchPageObject.menu().performSearchQuery(titleOfSecondResult);
+        searchPageObject.menu().performSearchQuery(titleOfSecondResult);
+        searchPageObject = new SearchPageObject(driver);
         Assert.assertEquals(searchPageObject.getSearchQuery(), titleOfSecondResult,
                 "Actual value in the search box doesn't match with expected");
 

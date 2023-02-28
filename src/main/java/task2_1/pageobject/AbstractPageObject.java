@@ -15,40 +15,32 @@ public abstract class AbstractPageObject {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected String title;
-    protected String url;
     protected HeaderPageComponent header;
     protected MenuPageComponent menu;
     protected FooterPageComponent footer;
-    protected PrivacyPolicyPageObject privacyPolicyPageObject;
 
     protected AbstractPageObject(WebDriver driver) {
         this.driver = driver;
-        this.title = this.driver.getTitle();
-        this.url = this.driver.getCurrentUrl();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        header = new HeaderPageComponent(driver);
-        menu = new MenuPageComponent(driver);
-        footer = new FooterPageComponent(driver);
 
     }
 
     public HeaderPageComponent header() {
-        return this.header;
+
+        return header = new HeaderPageComponent(driver);
     }
 
     public MenuPageComponent menu() {
-        return this.menu;
+        return menu = new MenuPageComponent(driver);
     }
 
     public FooterPageComponent footer() {
-        return this.footer;
+        return footer = new FooterPageComponent(driver);
     }
 
-    public PrivacyPolicyPageObject openPrivacyPolicyPage() {
-        this.footer.clickByLinkPrivacyPolicy();
+    public void openPrivacyPolicyPage() {
+        this.footer().clickByLinkPrivacyPolicy();
         BrowserUtils.switchToNewTab();
-        return new PrivacyPolicyPageObject(driver);
 
     }
 
