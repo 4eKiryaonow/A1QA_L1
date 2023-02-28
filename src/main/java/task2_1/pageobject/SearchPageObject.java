@@ -15,10 +15,9 @@ import java.util.stream.Collectors;
 
 public class SearchPageObject extends AbstractPageObject {
 
-    @FindBy(xpath = "//div[@class ='searchbar_left']//input[@id='term']")
-    private WebElement searchBox;
-    @FindBy(css = "div#search_resultsRows > a")
-    private List<WebElement> searchResultList;
+    private WebElement searchBox = driver.findElement(
+            By.xpath("//div[@class ='searchbar_left']//input[@id='term']"));
+    private List<WebElement> searchResultList = driver.findElements(By.cssSelector("div#search_resultsRows > a"));
 
     public SearchPageObject(WebDriver driver) {
         super(driver);
