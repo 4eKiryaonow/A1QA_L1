@@ -15,13 +15,11 @@ public abstract class BaseElement {
     By locator;
     String elementName;
     WebDriver driver;
-    WebDriverWait wait;
 
     public BaseElement(By locator, String elementName) {
         this.locator = locator;
         this.elementName = elementName;
         driver = WebDriverProvider.getDriver();
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     }
 
