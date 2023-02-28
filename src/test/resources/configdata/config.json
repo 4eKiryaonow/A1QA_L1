@@ -1,5 +1,6 @@
 {
   "browser" : "chrome",
   "url" : "https://store.steampowered.com/",
-  "options" : ["--incognito", "start-maximized"]
+  "options" : ["--incognito", "start-maximized"],
+  "duration" : 10
 }
