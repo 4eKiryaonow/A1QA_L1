@@ -18,11 +18,10 @@ public class MainPageObject extends BaseForm {
         super(homePageLabel, "MainPage");
     }
 
-    public AlertsFrameWindowsPageObject clickAlertsFrameWindowsBtn() {
+    public void clickAlertsFrameWindowsBtn() {
 
         allertsFrameWindowsBtn.clickElement();
 
-        return new AlertsFrameWindowsPageObject();
     }
 
 

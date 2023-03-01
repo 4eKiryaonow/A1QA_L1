@@ -18,8 +18,10 @@ public class AlertsTest extends BaseTestClass {
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main page hasn't been opened");
 
         System.out.println("Step 2. Click on Alerts, Frame & Windows button. In a menu click Alerts button.");
-        AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = mainPageObject.clickAlertsFrameWindowsBtn();
-        AlertsPageObject alertsPageObject = alertsFrameWindowsPageObject.LeftPanel().clickAlertsBtn();
+        mainPageObject.clickAlertsFrameWindowsBtn();
+        AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
+        alertsFrameWindowsPageObject.LeftPanel().clickAlertsBtn();
+        AlertsPageObject alertsPageObject = new AlertsPageObject();
         Assert.assertTrue(alertsPageObject.formIsOpened(), "Alerts page has not been opened");
 
         System.out.println("Step 3. Click on \"Click button to see alert\" button.");

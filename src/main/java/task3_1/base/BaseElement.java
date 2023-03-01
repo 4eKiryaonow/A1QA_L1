@@ -12,9 +12,9 @@ import java.time.Duration;
 
 public abstract class BaseElement {
 
-    By locator;
-    String elementName;
-    WebDriver driver;
+    private By locator;
+    private String elementName;
+    private WebDriver driver;
 
     public BaseElement(By locator, String elementName) {
         this.locator = locator;
@@ -23,7 +23,7 @@ public abstract class BaseElement {
 
     }
 
-    public WebElement findElement() {
+    private WebElement findElement() {
 
         return this.driver.findElement(locator);
     }

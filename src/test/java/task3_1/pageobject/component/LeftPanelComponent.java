@@ -26,35 +26,29 @@ public class LeftPanelComponent extends BaseForm {
         super(LeftPanelLabel, "LeftPanel");
     }
 
-    public AlertsPageObject clickAlertsBtn() {
+    public void clickAlertsBtn() {
 
         if (!AlertsBtn.isElementDisplayed()) {
             AlertsFrameWindowsBtn.clickElement();
         }
         AlertsBtn.clickElement();
-
-        return new AlertsPageObject();
     }
 
-    public FramesPageObject clickFramesBtn() {
+    public void clickFramesBtn() {
 
         if (!FramesBtn.isElementDisplayed()) {
             AlertsFrameWindowsBtn.clickElement();
         }
         FramesBtn.clickElement();
 
-        return new FramesPageObject();
     }
 
-    public NestedFramesPageObject clickNestedFrames() {
+    public void clickNestedFrames() {
 
         if (!NestedFramesBtn.isElementDisplayed()) {
             AlertsFrameWindowsBtn.clickElement();
         }
         NestedFramesBtn.clickElement();
-
-        return new NestedFramesPageObject();
-
 
     }
 
