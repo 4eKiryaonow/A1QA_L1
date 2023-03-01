@@ -2,7 +2,7 @@ package task3_1.base;
 
 import org.openqa.selenium.By;
 
-public class BaseFrame extends BaseForm {
+public abstract class BaseFrame extends BaseForm {
 
     private By frameLocator;
 
