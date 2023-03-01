@@ -12,7 +12,7 @@ public class ChildFrameComponent extends BaseFrame {
    public ChildFrameComponent() {
        super(childFrameLabel, childFrameLocator, "ChildFrame");
    }
-   
+
 
 
 
