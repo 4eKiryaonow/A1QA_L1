@@ -13,7 +13,7 @@ public class FrameUtil {
                 .frame(WebDriverProvider.getDriver().findElement(locator));
     }
 
-    public static void switchBackFromFrame(By locator) {
+    public static void switchBackFromFrame() {
 
         WebDriverProvider
                 .getDriver()
