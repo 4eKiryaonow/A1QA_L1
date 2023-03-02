@@ -12,6 +12,8 @@ public class MainPageObject extends BaseForm {
     private Button allertsFrameWindowsBtn = new Button(
             By.xpath("//*[contains(text(), 'Alerts')]//parent::div"),
             "AllertsFrameWindowsButton");
+    private Button elementsBtn = new Button(
+            By.xpath("//*[contains(text(), 'Elements')]//parent::div"), "ElementsButton");
 
     public MainPageObject() {
 
@@ -22,6 +24,11 @@ public class MainPageObject extends BaseForm {
 
         allertsFrameWindowsBtn.clickElement();
 
+    }
+
+    public void clickElementsBtn() {
+
+        elementsBtn.clickElement();
     }
 
 
