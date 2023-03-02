@@ -3,6 +3,7 @@ package task3_1.pageobject.component;
 import org.openqa.selenium.By;
 import task3_1.base.BaseFrame;
 import task3_1.element.Label;
+import task3_1.utils.FrameUtil;
 
 public class ParentFrameComponent extends BaseFrame {
 
@@ -20,6 +21,22 @@ public class ParentFrameComponent extends BaseFrame {
     public ChildFrameComponent childFrame() {
 
         return this.childFrameComponent;
+    }
+
+    public void switchToParentFrame() {
+
+        this.switchToFrame();
+    }
+
+
+    public String getParentFrameText() {
+
+        return parentFrameLabel.getTextOfElement();
+    }
+
+    public String getChildFrameText() {
+
+        return this.childFrame().getChildFrameText();
     }
 
 
