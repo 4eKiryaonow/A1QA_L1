@@ -10,16 +10,16 @@ public class AlertsFrameWindowsPageObject extends BaseForm {
     private static Label AlertFrameWindowsLabel = new Label(
             By.xpath("//div[@class = 'main-header'][contains(text(), 'Alerts, Frame & Windows')]"),
             "AlertsFrameWindowsLabel");
-    private LeftPanelComponent LeftPanel;
+    private LeftPanelComponent leftPanel;
 
     public AlertsFrameWindowsPageObject() {
 
         super(AlertFrameWindowsLabel, "AlertFrameWindowsPageObject");
-        this.LeftPanel = new LeftPanelComponent();
+        this.leftPanel = new LeftPanelComponent();
     }
 
     public LeftPanelComponent LeftPanel() {
 
-        return this.LeftPanel;
+        return this.leftPanel;
     }
 }
