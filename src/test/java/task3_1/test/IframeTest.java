@@ -3,9 +3,12 @@ package task3_1.test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import task3_1.pageobject.AlertsFrameWindowsPageObject;
+import task3_1.pageobject.FramesPageObject;
 import task3_1.pageobject.MainPageObject;
 import task3_1.pageobject.NestedFramesPageObject;
+import task3_1.pageobject.component.BottomFrame;
 import task3_1.pageobject.component.ParentFrameComponent;
+import task3_1.pageobject.component.TopFrame;
 
 public class IframeTest extends BaseTestClass {
 
@@ -29,7 +32,16 @@ public class IframeTest extends BaseTestClass {
         parentFrameComponent.leaveFrame();
         System.out.println("Step 3. Select \"Frames\" option in a left menu");
         nestedFramesPageObject.leftPanel().clickFramesBtn();
-        Thread.sleep(3000);
+        FramesPageObject framesPageObject = new FramesPageObject();
+        Assert.assertTrue(framesPageObject.formIsOpened(), "Page \"Frames\" hasn't been opened");
+        TopFrame topFrame = new TopFrame();
+        topFrame.switchToFrame();
+        String topFrameText = topFrame.getTopLabelText();
+        topFrame.leaveFrame();
+        BottomFrame bottomFrame = new BottomFrame();
+        bottomFrame.switchToFrame();
+        String bottomFrameText = bottomFrame.getBottomFrameText();
+        Assert.assertTrue(topFrameText.equals(bottomFrameText), "Text is not equals for both frames");
 
 
 
