@@ -9,11 +9,12 @@ import task3_1.pageobject.NestedFramesPageObject;
 import task3_1.pageobject.component.BottomFrame;
 import task3_1.pageobject.component.ParentFrameComponent;
 import task3_1.pageobject.component.TopFrame;
+import task3_1.util.TestDataManager;
 
 public class IframeTest extends BaseTestClass {
 
-    @Test
-    public void iFrameTest() throws InterruptedException {
+    @Test(dataProvider = "Iframe test", dataProviderClass = TestDataProvider.class)
+    public void iFrameTest(TestDataManager data) {
 
         MainPageObject mainPageObject = new MainPageObject();
         Assert.assertTrue(mainPageObject.formIsOpened(), "\"Main page\" hasn't been opened");
@@ -26,9 +27,9 @@ public class IframeTest extends BaseTestClass {
         Assert.assertTrue(nestedFramesPageObject.formIsOpened(), "Page \"Nested Frames\" hasn't been opened");
         ParentFrameComponent parentFrameComponent = new ParentFrameComponent();
         parentFrameComponent.switchToParentFrame();
-        Assert.assertEquals(parentFrameComponent.getParentFrameText(), "Parent frame", "Text on the parent frame doesn't match");
+        Assert.assertEquals(parentFrameComponent.getParentFrameText(), data.getParentFrameText(), "Text on the parent frame doesn't match");
         parentFrameComponent.childFrame().switchToChildFrame();
-        Assert.assertEquals(parentFrameComponent.getChildFrameText(), "Child Iframe", "Text on the child frame doesn't match");
+        Assert.assertEquals(parentFrameComponent.getChildFrameText(), data.getChildFrameText(), "Text on the child frame doesn't match");
         parentFrameComponent.leaveFrame();
         System.out.println("Step 3. Select \"Frames\" option in a left menu");
         nestedFramesPageObject.leftPanel().clickFramesBtn();
