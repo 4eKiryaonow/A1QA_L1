@@ -18,6 +18,7 @@ public class TablesTest extends BaseTestClass {
         elementsPageObject.LeftPanel().clickWebTables();
         WebTablePageObject webTablePageObject = new WebTablePageObject();
         Assert.assertTrue(webTablePageObject.formIsOpened(), "Page \"Web Table\" hasn't been opened");
+        webTablePageObject.clickAddBtn();
         System.out.println(user);
         Thread.sleep(1000);
 
