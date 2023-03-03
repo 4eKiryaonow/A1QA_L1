@@ -1,11 +1,16 @@
 package task3_1.util;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import task3_1.models.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Map;
 
 public class JsonReader {
 
@@ -46,6 +51,28 @@ public class JsonReader {
         return value;
 
     }
+
+    public static Map<String, User> getUserDataFromJsonFile(String path) {
+        Map<String, User> dataFromJsonFile;
+        Gson gson = new Gson();
+
+        try {
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+            Type type = new TypeToken<Map<String, User>>() {
+            }.getType();
+            dataFromJsonFile = gson.fromJson(bufferedReader, type);
+        } catch (Exception e) {
+
+            throw new RuntimeException(e);
+        }
+
+        return dataFromJsonFile;
+    }
+
+
+
+
 
 
 }
