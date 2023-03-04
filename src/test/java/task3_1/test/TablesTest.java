@@ -6,6 +6,7 @@ import task3_1.models.User;
 import task3_1.pageobject.ElementsPageObject;
 import task3_1.pageobject.MainPageObject;
 import task3_1.pageobject.WebTablePageObject;
+import task3_1.pageobject.component.RegistrationFormComponent;
 
 public class TablesTest extends BaseTestClass {
 
@@ -19,8 +20,9 @@ public class TablesTest extends BaseTestClass {
         WebTablePageObject webTablePageObject = new WebTablePageObject();
         Assert.assertTrue(webTablePageObject.formIsOpened(), "Page \"Web Table\" hasn't been opened");
         webTablePageObject.clickAddBtn();
-        System.out.println(user);
-        Thread.sleep(1000);
+        RegistrationFormComponent registrationForm = new RegistrationFormComponent();
+        registrationForm.enterUser(user);
+        Assert.assertFalse(registrationForm.formIsOpened(), "Registration form hasn't been closed");
 
 
 

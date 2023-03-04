@@ -4,8 +4,7 @@ import org.openqa.selenium.By;
 import task3_1.base.BaseForm;
 import task3_1.element.Button;
 import task3_1.element.Label;
-
-import java.sql.BatchUpdateException;
+import task3_1.pageobject.component.RegistrationFormComponent;
 
 public class WebTablePageObject extends BaseForm {
 
@@ -22,4 +21,5 @@ public class WebTablePageObject extends BaseForm {
 
         this.addBtn.clickElement();
     }
+
 }

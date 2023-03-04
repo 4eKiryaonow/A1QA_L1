@@ -6,13 +6,5 @@
     "age": "30",
     "salary": "3000",
     "department": "alpha"
-  },
-  "User_2": {
-    "firstName": "Buttercup",
-    "lastName": "Cumbersnatch",
-    "email": "BudapestCandygram@mail.io",
-    "age": "41",
-    "salary": "2000",
-    "department": "beta"
   }
 }

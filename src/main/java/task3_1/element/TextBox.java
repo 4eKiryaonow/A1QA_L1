@@ -8,4 +8,14 @@ public class TextBox extends BaseElement {
     public TextBox(By locator, String elementName) {
         super(locator, elementName);
     }
+
+    public void inputValue(String value) {
+
+        this.findElement().sendKeys(value);
+
+
+
+
+
+    }
 }

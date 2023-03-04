@@ -7,19 +7,20 @@ import task3_1.utils.ConfigManager;
 
 public class BaseTestClass {
 
-    protected WebDriver driver;
 
-    @BeforeTest
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
-        driver = WebDriverProvider.getDriver();
+        WebDriverProvider.getDriver();
         System.out.println("Step 1. Navigate to main page");
-        driver.navigate().to(ConfigManager.getURL());
+        WebDriverProvider.getDriver().navigate().to(ConfigManager.getURL());
 
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
         WebDriverProvider.closeDriver();
     }
+
+
 }
 
