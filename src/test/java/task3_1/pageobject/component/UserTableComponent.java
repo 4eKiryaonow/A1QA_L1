@@ -9,6 +9,7 @@ import task3_1.element.Button;
 import task3_1.element.Label;
 import task3_1.element.TextBox;
 import task3_1.models.User;
+import task3_1.utils.ConditionalWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +23,7 @@ public class UserTableComponent extends BaseForm {
     private TextBox tableBody = new TextBox(By.cssSelector("div.rt-tbody"), "BodyTable");
     private TextBox tableRow = new TextBox(By.cssSelector("div.rt-tr"), "RowTable");
     private TextBox tableCell = new TextBox(By.cssSelector("div.rt-td"), "TableCell");
-    private Button deleteUserButton = new Button(
-            By.xpath("//span[contains(@id, 'delete-record')]"), "DeleteButton");
+    private String dynamicLocatorUserButton = "//span[contains(@id, 'delete-record-%d')]";
 
     public UserTableComponent() {
 
@@ -51,6 +51,7 @@ public class UserTableComponent extends BaseForm {
 
         );
     }
+
     public List<User> getListOfUsers() {
 
         return tableBody
@@ -58,26 +59,34 @@ public class UserTableComponent extends BaseForm {
                 .findElements(tableRow.getLocator())
                 .stream()
                 .map(this::getUserFromRow)
+                .filter(User -> !User.getFirstName().equals(" "))
                 .collect(Collectors.toList());
     }
 
-    public void getFilledRows() {
+    public void deleteUserFromTable(User user) {
 
-        List<WebElement> list = new ArrayList<>();
-        List<WebElement> list2 = tableBody.findElement().findElements(tableRow.getLocator());
-
-        for (int i = 0;  i < list2.size(); i++) {
-
-            if (list2.get(i).findElement(deleteUserButton.getLocator()).isDisplayed()) {
-
-                list.add(list2.get(i));
-            }
-        }
-        System.out.println(list.size());
-
+        int position = this.getUserRowNumber(user) + 1;
+        this.clickDeleteButton(position);
 
     }
+
+    public void clickDeleteButton(int row) {
+
+        Button clickDeleteButton = new Button(By.xpath(String.format(dynamicLocatorUserButton, row)), "UserButton");
+        clickDeleteButton.clickElement();
+        ConditionalWait.waitElementDisappears(clickDeleteButton);
+
+    }
+
+    public int getUserRowNumber(User user) {
+
+        return this.getListOfUsers().indexOf(user);
+
+    }
+
 
 
 
 }
+
+

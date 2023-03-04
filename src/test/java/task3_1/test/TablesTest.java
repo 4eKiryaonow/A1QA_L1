@@ -11,7 +11,7 @@ import task3_1.pageobject.component.RegistrationFormComponent;
 public class TablesTest extends BaseTestClass {
 
     @Test(dataProvider = "Tables test", dataProviderClass = TestDataProvider.class)
-    public void TablesTest(User user) throws InterruptedException {
+    public void TablesTest(User user) {
 
         MainPageObject mainPageObject = new MainPageObject();
         mainPageObject.clickElementsBtn();
@@ -23,10 +23,9 @@ public class TablesTest extends BaseTestClass {
         RegistrationFormComponent registrationForm = new RegistrationFormComponent();
         registrationForm.enterUser(user);
         Assert.assertFalse(registrationForm.formIsOpened(), "Registration form hasn't been closed");
-        System.out.println(webTablePageObject.userTable().getListOfUsers());
-        webTablePageObject.userTable().getFilledRows();
-
-
+        Assert.assertTrue(webTablePageObject.userTable().getListOfUsers().contains(user), "Table doesn't contain created user");
+        webTablePageObject.userTable().deleteUserFromTable(user);
+        Assert.assertFalse(webTablePageObject.userTable().getListOfUsers().contains(user), "User wasn't deleted");
 
 
     }
