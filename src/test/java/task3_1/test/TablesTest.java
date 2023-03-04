@@ -23,6 +23,9 @@ public class TablesTest extends BaseTestClass {
         RegistrationFormComponent registrationForm = new RegistrationFormComponent();
         registrationForm.enterUser(user);
         Assert.assertFalse(registrationForm.formIsOpened(), "Registration form hasn't been closed");
+        System.out.println(webTablePageObject.userTable().getListOfUsers());
+        webTablePageObject.userTable().getFilledRows();
+
 
 
 

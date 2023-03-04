@@ -5,12 +5,14 @@ import task3_1.base.BaseForm;
 import task3_1.element.Button;
 import task3_1.element.Label;
 import task3_1.pageobject.component.RegistrationFormComponent;
+import task3_1.pageobject.component.UserTableComponent;
 
 public class WebTablePageObject extends BaseForm {
 
     private static Label webTableLabel = new Label(
             By.xpath("//div[@class = 'main-header'][contains(text(), 'Web Tables')]"), "WebTableLabel");
     private Button addBtn = new Button(By.id("addNewRecordButton"), "AddButton");
+    private UserTableComponent userTable;
 
     public WebTablePageObject() {
 
@@ -20,6 +22,11 @@ public class WebTablePageObject extends BaseForm {
     public void clickAddBtn() {
 
         this.addBtn.clickElement();
+    }
+
+    public UserTableComponent userTable() {
+
+        return new UserTableComponent();
     }
 
 }
