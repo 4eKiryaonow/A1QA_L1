@@ -2,10 +2,7 @@ package task3_1.test;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import task3_1.pageobject.AlertsFrameWindowsPageObject;
-import task3_1.pageobject.BrowserWindowsPageObject;
-import task3_1.pageobject.MainPageObject;
-import task3_1.pageobject.SamplePageObject;
+import task3_1.pageobject.*;
 import task3_1.utils.BrowserUtil;
 
 public class HandlesTest extends BaseTestClass {
@@ -28,6 +25,10 @@ public class HandlesTest extends BaseTestClass {
         BrowserUtil.closeCurrentTab();
         BrowserUtil.switchToCertainTab(browserWindowsPageTab);
         Assert.assertTrue(browserWindowsPageObject.formIsOpened());
+        browserWindowsPageObject.leftPanel().clickLinks();
+        LinksPageObject linksPageObject = new LinksPageObject();
+        Assert.assertTrue(linksPageObject.formIsOpened(), "Links Page hasn't been opened");
+        
 
         Thread.sleep(5000);
 
