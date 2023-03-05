@@ -28,7 +28,7 @@ public class HandlesTest extends BaseTestClass {
         browserWindowsPageObject.leftPanel().clickLinks();
         LinksPageObject linksPageObject = new LinksPageObject();
         Assert.assertTrue(linksPageObject.formIsOpened(), "Links Page hasn't been opened");
-        
+
 
         Thread.sleep(5000);
 

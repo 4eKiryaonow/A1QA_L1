@@ -78,7 +78,7 @@ public class LeftPanelComponent extends BaseForm {
 
     public void clickLinks() {
 
-        if (!linksBtn.isElementPresented()) {
+        if (!linksBtn.isElementDisplayed()) {
             elementsBtn.clickElement();
         }
         linksBtn.clickElement();
