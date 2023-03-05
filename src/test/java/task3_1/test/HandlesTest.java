@@ -8,7 +8,7 @@ import task3_1.utils.BrowserUtil;
 public class HandlesTest extends BaseTestClass {
 
     @Test
-    public static void handlesTest() throws InterruptedException {
+    public static void handlesTest() {
 
         MainPageObject mainPageObject = new MainPageObject();
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main page hasn't been opened");
@@ -17,20 +17,23 @@ public class HandlesTest extends BaseTestClass {
         alertsFrameWindowsPageObject.LeftPanel().clickWindowsBrowser();
         BrowserWindowsPageObject browserWindowsPageObject = new BrowserWindowsPageObject();
         Assert.assertTrue(browserWindowsPageObject.formIsOpened(), "BrowserWindows page hasn't been opened");
-        String browserWindowsPageTab = BrowserUtil.getCurrentTab();
+        String currentTab = BrowserUtil.getCurrentTab();
         browserWindowsPageObject.clickTabBtn();
         BrowserUtil.switchToNewTab();
         SamplePageObject samplePageObject = new SamplePageObject();
         Assert.assertTrue(samplePageObject.formIsOpened(), "SamplePage hasn't been opened");
         BrowserUtil.closeCurrentTab();
-        BrowserUtil.switchToCertainTab(browserWindowsPageTab);
+        BrowserUtil.switchToCertainTab(currentTab);
         Assert.assertTrue(browserWindowsPageObject.formIsOpened());
         browserWindowsPageObject.leftPanel().clickLinks();
         LinksPageObject linksPageObject = new LinksPageObject();
         Assert.assertTrue(linksPageObject.formIsOpened(), "Links Page hasn't been opened");
-
-
-        Thread.sleep(5000);
+        currentTab = BrowserUtil.getCurrentTab();
+        linksPageObject.clickLinkHome();
+        BrowserUtil.switchToNewTab();
+        Assert.assertTrue(mainPageObject.formIsOpened());
+        BrowserUtil.switchToCertainTab(currentTab);
+        Assert.assertTrue(linksPageObject.formIsOpened());
 
     }
 }
