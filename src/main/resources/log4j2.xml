@@ -3,7 +3,7 @@
 <Configuration status="INFO">
     <Properties>
         <property name="LOG_FOLDER">log</property>
-        <property name="pattern_cmd">%d{HH:mm:ss} %-5level %logger{5} - %m%n</property>
+        <property name="pattern_cmd">%d{HH:mm:ss} %-5level %logger{1} - %m%n</property>
         <property name="pattern_file">%d{yyyy-MM-dd HH:mm:ss} [%t] [%M] [%L] %-5level %logger{5} - %m%n</property>
     </Properties>
     <Appenders>
