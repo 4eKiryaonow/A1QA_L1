@@ -11,6 +11,6 @@ public class SamplePageObject extends BaseForm {
     public SamplePageObject() {
         super(labelSamplePage, "SamplePage");
     }
-    
+
 
 }
