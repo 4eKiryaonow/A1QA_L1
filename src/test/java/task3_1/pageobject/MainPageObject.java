@@ -17,7 +17,7 @@ public class MainPageObject extends BaseForm {
 
     public MainPageObject() {
 
-        super(homePageLabel, "MainPage");
+        super(homePageLabel, "Main Page");
     }
 
     public void clickAlertsFrameWindowsBtn() {

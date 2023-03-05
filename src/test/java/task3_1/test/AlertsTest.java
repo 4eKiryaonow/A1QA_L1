@@ -13,12 +13,17 @@ import task3_1.utils.InfoLogger;
 
 public class AlertsTest extends BaseTestClass {
 
-    @Test(dataProvider = "Alerts test", dataProviderClass = TestDataProvider.class)
+    @Test(testName = "Alerts",
+            dataProvider = "Alerts test",
+            dataProviderClass = TestDataProvider.class)
     public void alertsTestScenario(TestDataManager data) {
+        InfoLogger.info("Test \"Alerts\" starts");
 
+        InfoLogger.info("Step 1. Navigate to Main Page");
         MainPageObject mainPageObject = new MainPageObject();
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main page hasn't been opened");
-        //System.out.println("Step 2. Click on Alerts, Frame & Windows button. In a menu click Alerts button.");
+        
+        InfoLogger.info("Step 2. Click on Alerts, Frame & Windows button. In a menu click Alerts button.");
         mainPageObject.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
         alertsFrameWindowsPageObject.LeftPanel().clickAlertsBtn();
