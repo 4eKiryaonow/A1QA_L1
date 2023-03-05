@@ -2,6 +2,7 @@ package task3_1.driver;
 
 import org.openqa.selenium.WebDriver;
 import task3_1.utils.ConfigManager;
+import task3_1.utils.InfoLogger;
 
 import java.util.Locale;
 import java.util.Objects;
@@ -14,7 +15,6 @@ public final class WebDriverProvider {
     }
 
     public static WebDriver getDriver() {
-
         if (Objects.isNull(driver)) {
             String browserName = ConfigManager.getBrowser();
             driver = WebDriverFactory.createDriver(Browser.valueOf(browserName.toUpperCase(Locale.ROOT)));
@@ -24,7 +24,7 @@ public final class WebDriverProvider {
     }
 
     public static void closeDriver() {
-
+        InfoLogger.info("closeDriver()");
         driver.quit();
         driver = null;
     }

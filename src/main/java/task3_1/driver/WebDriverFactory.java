@@ -12,6 +12,7 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import task3_1.exception.IllegalBrowserNameException;
 import task3_1.utils.ConfigManager;
+import task3_1.utils.InfoLogger;
 
 public class WebDriverFactory {
 
@@ -47,28 +48,32 @@ public class WebDriverFactory {
     }
 
     private static WebDriver createChromeDriver() {
+        InfoLogger.info("createChromeDriver()");
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver(getChromeOptions());
 
     }
 
     private static WebDriver createFirefoxDriver() {
+        InfoLogger.info("createFirefoxDriver()");
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver(getFirefoxOptions());
     }
 
     private static WebDriver createEdgeDriver() {
+        InfoLogger.info("createEdgeDriver()");
         WebDriverManager.edgedriver().setup();
         return new EdgeDriver(getEdgeOptions());
     }
 
     private static WebDriver createOperaDriver() {
+        InfoLogger.info("createOperaDriver()");
         WebDriverManager.operadriver().setup();
         return new OperaDriver(getOperaOptions());
     }
 
     private static ChromeOptions getChromeOptions() {
-
+        InfoLogger.info("getChromeOptions()");
         ChromeOptions options = new ChromeOptions();
         options.addArguments(ConfigManager.getOptions());
         return options;
@@ -76,18 +81,21 @@ public class WebDriverFactory {
     }
 
     private static FirefoxOptions getFirefoxOptions() {
+        InfoLogger.info("getFirefoxOptions()");
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments(ConfigManager.getOptions());
         return options;
     }
 
     private static EdgeOptions getEdgeOptions() {
+        InfoLogger.info("getEdgeOptions()");
         EdgeOptions options = new EdgeOptions();
         options.addArguments(ConfigManager.getOptions());
         return options;
     }
 
     private static OperaOptions getOperaOptions() {
+        InfoLogger.info("getOperaOptions()");
         OperaOptions options = new OperaOptions();
         options.addArguments(ConfigManager.getOptions());
         return options;
