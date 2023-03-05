@@ -2,6 +2,7 @@ package task3_1.test;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
 import task3_1.pageobject.AlertsFrameWindowsPageObject;
 import task3_1.pageobject.AlertsPageObject;
 import task3_1.pageobject.MainPageObject;
@@ -16,7 +17,6 @@ public class AlertsTest extends BaseTestClass {
 
         MainPageObject mainPageObject = new MainPageObject();
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main page hasn't been opened");
-
         System.out.println("Step 2. Click on Alerts, Frame & Windows button. In a menu click Alerts button.");
         mainPageObject.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
