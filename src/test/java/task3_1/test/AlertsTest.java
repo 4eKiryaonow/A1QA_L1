@@ -12,7 +12,7 @@ import task3_1.utils.AlertUtil;
 public class AlertsTest extends BaseTestClass {
 
     @Test(dataProvider = "Alerts test", dataProviderClass = TestDataProvider.class)
-    public void AlertsTestScenario(TestDataManager data) throws InterruptedException {
+    public void alertsTestScenario(TestDataManager data) throws InterruptedException {
 
         MainPageObject mainPageObject = new MainPageObject();
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main page hasn't been opened");

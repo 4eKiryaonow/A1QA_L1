@@ -14,15 +14,9 @@ public abstract class BaseForm {
 
     public boolean formIsOpened() {
 
-        return baseElement.isElementDisplayed();
+        return baseElement.isElementPresented();
 
     }
-
-
-
-
-
-
 
 
 }

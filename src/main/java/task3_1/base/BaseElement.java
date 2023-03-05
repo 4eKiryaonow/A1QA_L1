@@ -37,9 +37,14 @@ public abstract class BaseElement {
         findElement().click();
     }
 
-    public boolean isElementDisplayed() {
+    public boolean isElementPresented() {
 
         return !WebDriverProvider.getDriver().findElements(locator).isEmpty();
+    }
+
+    public boolean isElementDisplayed () {
+
+        return WebDriverProvider.getDriver().findElement(locator).isDisplayed();
     }
 
     public String getTextOfElement() {

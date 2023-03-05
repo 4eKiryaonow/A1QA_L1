@@ -11,7 +11,7 @@ import task3_1.pageobject.component.RegistrationFormComponent;
 public class TablesTest extends BaseTestClass {
 
     @Test(dataProvider = "Tables test", dataProviderClass = TestDataProvider.class)
-    public void TablesTest(User user) {
+    public void tablesTest(User user) {
 
         MainPageObject mainPageObject = new MainPageObject();
         mainPageObject.clickElementsBtn();
