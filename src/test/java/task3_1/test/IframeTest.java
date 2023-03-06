@@ -13,7 +13,8 @@ import task3_1.util.TestDataManager;
 
 public class IframeTest extends BaseTestClass {
 
-    @Test(dataProvider = "Iframe test", dataProviderClass = TestDataProvider.class)
+    @Test(testName = "Iframe",
+            dataProvider = "Iframe test", dataProviderClass = TestDataProvider.class)
     public void iFrameTest(TestDataManager data) {
 
         MainPageObject mainPageObject = new MainPageObject();

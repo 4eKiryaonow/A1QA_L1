@@ -22,7 +22,7 @@ public class AlertsTest extends BaseTestClass {
         InfoLogger.info("Step 1. Navigate to Main Page");
         MainPageObject mainPageObject = new MainPageObject();
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main page hasn't been opened");
-        
+
         InfoLogger.info("Step 2. Click on Alerts, Frame & Windows button. In a menu click Alerts button.");
         mainPageObject.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
@@ -30,36 +30,38 @@ public class AlertsTest extends BaseTestClass {
         AlertsPageObject alertsPageObject = new AlertsPageObject();
         Assert.assertTrue(alertsPageObject.formIsOpened(), "Alerts page has not been opened");
 
-        //System.out.println("Step 3. Click on \"Click button to see alert\" button.");
+        InfoLogger.info("Step 3. Click on \"Click button to see alert\" button.");
         alertsPageObject.clickToSeeAlertBtn();
         Assert.assertEquals(AlertUtil.getAlertText(), data.getSeeAlertText(),
                 String.format("Alert with text \"%s\" has not been open.", data.getSeeAlertText()));
 
-        //System.out.println("Step 4. Click on \"OK\" button");
+        InfoLogger.info("Step 4. Click on \"OK\" button");
         AlertUtil.acceptAlert();
         Assert.assertFalse(AlertUtil.alertIsPresent(), "Alert has not been closed");
 
-        //System.out.println("Step 5. Click on \"On button click, confirm box will appear\" button");
+        InfoLogger.info("Step 5. Click on \"On button click, confirm box will appear\" button");
         alertsPageObject.clickConfirmBoxBtn();
         Assert.assertEquals(AlertUtil.getAlertText(), data.getConfirmAlertText(),
                 String.format("Alert with text \"%s\" has not been opened", data.getConfirmAlertText()));
 
-        //System.out.println("Step 6. Click on \"OK\" button");
+        InfoLogger.info("Step 6. Click on \"OK\" button");
         AlertUtil.acceptAlert();
         Assert.assertFalse(AlertUtil.alertIsPresent(), "Alert has not been opened");
         Assert.assertEquals(alertsPageObject.getResultConfirmBoxBtn(), data.getResultConfirmAlertText(),
                 String.format("Text \"%s\" doesn't appear om the page", data.getResultConfirmAlertText()));
 
-        //System.out.println("Step 7. Click on \"On button click, prompt box will appear\" button");
+        InfoLogger.info("Step 7. Click on \"On button click, prompt box will appear\" button");
         alertsPageObject.clickPromptBoxBtn();
         Assert.assertEquals(AlertUtil.getAlertText(), data.getPromptBoxAlertText(),
                 String.format("Alert with text \"%s\" hasn't been opened", data.getPromptBoxAlertText()));
 
-        //System.out.println("Step 8. Enter randomly generated text, click \"OK\" button");
+        InfoLogger.info("Step 8. Enter randomly generated text, click \"OK\" button");
         AlertUtil.sendTextToAlert(data.getRandomString());
         AlertUtil.acceptAlert();
         Assert.assertFalse(AlertUtil.alertIsPresent());
         Assert.assertTrue(alertsPageObject.getResultPromptBoxBtn().contains(data.getRandomString()), String.format(
                         "Appeared text on the page doesn't equal random generated text: \"%s\"", data.getRandomString()));
+
+        InfoLogger.info("Test \"Alerts\" is finished.");
     }
 }
