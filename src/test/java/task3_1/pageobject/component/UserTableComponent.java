@@ -63,6 +63,11 @@ public class UserTableComponent extends BaseForm {
                 .collect(Collectors.toList());
     }
 
+    public int getNumberOfUsers() {
+
+        return this.getListOfUsers().size();
+    }
+
     public void deleteUserFromTable(User user) {
 
         int position = this.getUserRowNumber(user) + 1;
