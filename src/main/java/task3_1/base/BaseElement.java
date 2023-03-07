@@ -33,9 +33,15 @@ public abstract class BaseElement {
 
     public void clickElement() {
         InfoLogger.info(String.format("clickElement() for: %s", this.getElementName()));
-        JsUtil.pageScrollDown(locator);
+        scrollDownElement();
         ConditionalWait.waitToBeClickable(locator);
         findElement().click();
+    }
+
+    public void scrollDownElement() {
+        InfoLogger.info(String.format("scrollDownElement() for: %s", this.getElementName()));
+        JsUtil.pageScrollDown(locator);
+
     }
 
     public boolean isElementPresented() {
