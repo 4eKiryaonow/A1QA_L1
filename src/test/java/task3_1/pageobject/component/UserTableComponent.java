@@ -30,15 +30,6 @@ public class UserTableComponent extends BaseForm {
         super(userTableLabel, "UserTable");
     }
 
-    public List<WebElement> getAllRows() {
-
-        return new ArrayList<>(
-                tableBody
-                        .findElement()
-                        .findElements(By.cssSelector("div.rt-tr")));
-
-    }
-
     public User getUserFromRow(WebElement element) {
 
         return new User(
