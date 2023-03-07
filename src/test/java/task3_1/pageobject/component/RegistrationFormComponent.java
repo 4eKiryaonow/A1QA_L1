@@ -27,34 +27,34 @@ public class RegistrationFormComponent extends BaseForm {
         super(regFormLabel, "RegistrationForm");
     }
 
-    public void inputFirstName(User user) {
+    public void inputFirstName(String text) {
 
-        firstName.inputValue(user.getFirstName());
+        firstName.inputValue(text);
     }
 
-    public void inputLastName(User user) {
+    public void inputLastName(String text) {
 
-        lastName.inputValue(user.getLastName());
+        lastName.inputValue(text);
     }
 
-    public void inputEmail(User user) {
+    public void inputEmail(String text) {
 
-        email.inputValue(user.getEmail());
+        email.inputValue(text);
     }
 
-    public void inputAge(User user) {
+    public void inputAge(String text) {
 
-        age.inputValue(user.getAge());
+        age.inputValue(text);
     }
 
-    public void inputSalary(User user) {
+    public void inputSalary(String text) {
 
-        salary.inputValue(user.getSalary());
+        salary.inputValue(text);
     }
 
-    public void inputDepartment(User user) {
+    public void inputDepartment(String text) {
 
-        department.inputValue(user.getDepartment());
+        department.inputValue(text);
     }
 
     public void clickSubmitBtn() {
@@ -65,12 +65,12 @@ public class RegistrationFormComponent extends BaseForm {
 
     public void enterUser(User user) {
 
-        inputFirstName(user);
-        inputLastName(user);
-        inputEmail(user);
-        inputAge(user);
-        inputSalary(user);
-        inputDepartment(user);
+        inputFirstName(user.getFirstName());
+        inputLastName(user.getLastName());
+        inputEmail(user.getEmail());
+        inputAge(user.getAge());
+        inputSalary(user.getSalary());
+        inputDepartment(user.getDepartment());
         clickSubmitBtn();
 
     }
