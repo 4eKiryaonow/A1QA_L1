@@ -6,7 +6,7 @@ import task3_1.utils.BrowserUtil;
 import task3_1.utils.ConfigManager;
 import task3_1.utils.InfoLogger;
 
-public class BaseTestClass {
+public abstract class BaseTestClass {
 
 
     @BeforeMethod()
