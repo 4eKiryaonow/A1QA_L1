@@ -22,9 +22,7 @@ public class ConfigReader {
             jsonObject = (JSONObject) reader.parse(bufferedReader);
 
         } catch (Exception e) {
-
             InfoLogger.error(e.getMessage());
-
             throw new RuntimeException(e);
         }
 

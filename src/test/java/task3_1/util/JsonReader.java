@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import task3_1.models.User;
+import task3_1.utils.InfoLogger;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -26,7 +27,7 @@ public class JsonReader {
             value = (List<String>) jsonObject.get(keyName);
 
         } catch (Exception e) {
-
+            InfoLogger.error(e.getMessage());
             throw new RuntimeException(e);
         }
 
@@ -44,7 +45,7 @@ public class JsonReader {
             value = jsonObject.get(keyName).toString();
 
         } catch (Exception e) {
-
+            InfoLogger.error(e.getMessage());
             throw new RuntimeException(e);
         }
 
@@ -63,7 +64,7 @@ public class JsonReader {
             }.getType();
             dataFromJsonFile = gson.fromJson(bufferedReader, type);
         } catch (Exception e) {
-
+            InfoLogger.error(e.getMessage());
             throw new RuntimeException(e);
         }
 
