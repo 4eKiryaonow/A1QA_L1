@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import task3_1.base.BaseFrame;
 import task3_1.element.Label;
 
-import java.security.SecureRandom;
-
 public class TopFrame extends BaseFrame {
 
     private static By topFrameLocator = By.id("frame1");

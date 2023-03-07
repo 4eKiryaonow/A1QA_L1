@@ -2,8 +2,6 @@ package task3_1.pageobject.component;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.w3c.dom.Text;
-import task3_1.base.BaseElement;
 import task3_1.base.BaseForm;
 import task3_1.element.Button;
 import task3_1.element.Label;
@@ -11,7 +9,6 @@ import task3_1.element.TextBox;
 import task3_1.models.User;
 import task3_1.utils.ConditionalWait;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -79,8 +76,6 @@ public class UserTableComponent extends BaseForm {
         return this.getListOfUsers().indexOf(user);
 
     }
-
-
 
 
 }

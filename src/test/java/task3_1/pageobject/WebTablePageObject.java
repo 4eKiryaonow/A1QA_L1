@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import task3_1.base.BaseForm;
 import task3_1.element.Button;
 import task3_1.element.Label;
-import task3_1.pageobject.component.RegistrationFormComponent;
 import task3_1.pageobject.component.UserTableComponent;
 
 public class WebTablePageObject extends BaseForm {

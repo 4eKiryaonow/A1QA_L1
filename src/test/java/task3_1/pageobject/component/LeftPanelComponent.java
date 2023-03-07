@@ -4,9 +4,6 @@ import org.openqa.selenium.By;
 import task3_1.base.BaseForm;
 import task3_1.element.Button;
 import task3_1.element.Label;
-import task3_1.pageobject.AlertsPageObject;
-import task3_1.pageobject.FramesPageObject;
-import task3_1.pageobject.NestedFramesPageObject;
 
 public class LeftPanelComponent extends BaseForm {
 
