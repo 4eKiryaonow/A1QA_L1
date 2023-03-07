@@ -2,11 +2,9 @@ package task3_1.test;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.log4testng.Logger;
 import task3_1.pageobject.AlertsFrameWindowsPageObject;
 import task3_1.pageobject.AlertsPageObject;
 import task3_1.pageobject.MainPageObject;
-import task3_1.util.StringGenerator;
 import task3_1.util.TestDataManager;
 import task3_1.utils.AlertUtil;
 import task3_1.utils.InfoLogger;
