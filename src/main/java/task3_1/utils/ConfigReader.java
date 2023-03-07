@@ -23,6 +23,8 @@ public class ConfigReader {
 
         } catch (Exception e) {
 
+            InfoLogger.error(e.getMessage());
+
             throw new RuntimeException(e);
         }
 
