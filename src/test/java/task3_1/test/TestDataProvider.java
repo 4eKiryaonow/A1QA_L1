@@ -23,7 +23,8 @@ public class TestDataProvider {
         data.setConfirmAlertText(JsonReader.getStringFromJsonFile(path,"confirmAlertText"));
         data.setResultConfirmAlertText(JsonReader.getStringFromJsonFile(path,"resultConfirmAlertText"));
         data.setPromptBoxAlertText(JsonReader.getStringFromJsonFile(path,"promptBoxAlertText"));
-        data.setRandomString(StringGenerator.getRandomString());
+        data.setLengthRandomString(Integer.parseInt(JsonReader.getStringFromJsonFile(path,"lengthRandomString")));
+        data.setRandomString(StringGenerator.getRandomString(data.getLengthRandomString()));
 
         return new Object[][] {{data}};
     }

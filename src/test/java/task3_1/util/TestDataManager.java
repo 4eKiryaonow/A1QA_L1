@@ -15,6 +15,7 @@ public class TestDataManager {
     private String confirmAlertText;
     private String resultConfirmAlertText;
     private String promptBoxAlertText;
+    private int lengthRandomString;
     private String randomString;
     //variables for IframeTest
     private String parentFrameText;

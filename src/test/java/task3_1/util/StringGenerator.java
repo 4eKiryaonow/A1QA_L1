@@ -4,9 +4,8 @@ import org.apache.commons.lang.RandomStringUtils;
 
 public class StringGenerator {
 
-    public static String getRandomString() {
+    public static String getRandomString(int length) {
 
-        int length = 8;
         return RandomStringUtils.random(length,true,false);
     }
 }
