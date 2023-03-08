@@ -12,7 +12,6 @@ public class LinksPageObject extends BaseForm {
     private TextBox linkHome = new TextBox(By.xpath("//a[@id='simpleLink']"), "Home Link");
 
 
-
     public LinksPageObject() {
         super(linksLabel, "Links Page");
 
@@ -21,6 +20,16 @@ public class LinksPageObject extends BaseForm {
     public void clickLinkHome() {
 
         linkHome.clickElement();
+    }
+
+    public void scrollLinkHome() {
+
+        linkHome.scrollDownElement();
+    }
+
+    public void scrollThenClickLinkHome() {
+        scrollLinkHome();
+        clickLinkHome();
     }
 
 }

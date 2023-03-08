@@ -17,9 +17,7 @@ import task3_1.utils.InfoLogger;
 public class WebDriverFactory {
 
     public static WebDriver createDriver(final Browser browser) {
-
         WebDriver driver;
-
         switch (browser) {
 
             case CHROME:
@@ -40,18 +38,14 @@ public class WebDriverFactory {
 
             default:
                 throw new IllegalBrowserNameException();
-
         }
-
         return driver;
-
     }
 
     private static WebDriver createChromeDriver() {
         InfoLogger.info("createChromeDriver()");
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver(getChromeOptions());
-
     }
 
     private static WebDriver createFirefoxDriver() {
@@ -77,7 +71,6 @@ public class WebDriverFactory {
         ChromeOptions options = new ChromeOptions();
         options.addArguments(ConfigManager.getOptions());
         return options;
-
     }
 
     private static FirefoxOptions getFirefoxOptions() {

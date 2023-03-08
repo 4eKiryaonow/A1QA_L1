@@ -28,15 +28,44 @@ public class AlertsPageObject extends BaseForm {
         toSeeAlertBtn.clickElement();
     }
 
-    public AlertsPageObject clickConfirmBoxBtn() {
+    public void scrollToSeeAlertBtn() {
+
+        toSeeAlertBtn.scrollDownElement();
+    }
+
+    public void scrollThenClickSeeAlertBtn() {
+        scrollToSeeAlertBtn();
+        clickToSeeAlertBtn();
+    }
+
+    public void scrollThenClickConfirmBoxBtn() {
+        scrollConfirmBoxBtn();
+        clickConfirmBoxBtn();
+    }
+
+    public void clickConfirmBoxBtn() {
 
         confirmBoxBtn.clickElement();
-        return this;
-
     }
+
+    public void scrollConfirmBoxBtn() {
+
+        confirmBoxBtn.scrollDownElement();
+    }
+
     public void clickPromptBoxBtn() {
 
         promptBoxBtn.clickElement();
+    }
+
+    public void scrollPromptBoxBtn() {
+
+        promptBoxBtn.scrollDownElement();
+    }
+
+    public void scrollThenClickPromptBoxBtn() {
+        scrollPromptBoxBtn();
+        clickPromptBoxBtn();
     }
     public String getResultConfirmBoxBtn() {
 
@@ -46,6 +75,4 @@ public class AlertsPageObject extends BaseForm {
 
         return resultOfPromptBoxBtn.getTextOfElement();
     }
-
-
 }

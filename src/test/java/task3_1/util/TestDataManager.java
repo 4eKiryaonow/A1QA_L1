@@ -20,5 +20,4 @@ public class TestDataManager {
     //variables for IframeTest
     private String parentFrameText;
     private String childFrameText;
-
 }

@@ -10,7 +10,6 @@ public class FramesPageObject extends BaseForm {
             By.xpath("//div[@class='main-header'][contains(text(), 'Frames')]"),
             "labelFrames");
 
-
     public FramesPageObject() {
         super(labelFrames, "FramesPageObject");
     }

@@ -19,13 +19,20 @@ public class WebTablePageObject extends BaseForm {
     }
 
     public void clickAddBtn() {
+        addBtn.clickElement();
+    }
 
-        this.addBtn.clickElement();
+    public void scrollAddBtn() {
+        addBtn.scrollDownElement();
+    }
+
+    public void scrollThenClickAddBtn() {
+        scrollAddBtn();
+        clickAddBtn();
     }
 
     public UserTableComponent userTable() {
 
         return new UserTableComponent();
     }
-
 }

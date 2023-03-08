@@ -14,7 +14,6 @@ public abstract class BaseTestClass {
         InfoLogger.info("setUp()");
         WebDriverProvider.getDriver();
         BrowserUtil.navigateToUrl(ConfigManager.getURL());
-
     }
 
     @AfterMethod
@@ -22,7 +21,5 @@ public abstract class BaseTestClass {
         InfoLogger.info("tearDown()");
         WebDriverProvider.closeDriver();
     }
-
-
 }
 

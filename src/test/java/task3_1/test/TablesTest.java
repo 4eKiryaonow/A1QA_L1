@@ -21,14 +21,14 @@ public class TablesTest extends BaseTestClass {
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main Page hasn't been opened");
 
         InfoLogger.info("Step 2. Click on \"Elements\" button. In the menu click a \"Web Tables\" button");
-        mainPageObject.clickElementsBtn();
+        mainPageObject.scrollThenClickElementsBtn();
         ElementsPageObject elementsPageObject = new ElementsPageObject();
         elementsPageObject.LeftPanel().scrollThenClickWebTablesBtn();
         WebTablePageObject webTablePageObject = new WebTablePageObject();
         Assert.assertTrue(webTablePageObject.formIsOpened(), "Page \"Web Table\" hasn't been opened");
 
         InfoLogger.info("Step 3. Click on \"Add\" button");
-        webTablePageObject.clickAddBtn();
+        webTablePageObject.scrollThenClickAddBtn();
         RegistrationFormComponent registrationForm = new RegistrationFormComponent();
         Assert.assertTrue(registrationForm.formIsOpened(), "Registration form hasn't appeared on the page");
 
@@ -44,6 +44,5 @@ public class TablesTest extends BaseTestClass {
         Assert.assertFalse(webTablePageObject.userTable().getListOfUsers().contains(user), "User wasn't deleted");
 
         InfoLogger.info("Test \"Tables\" is finished.");
-
     }
 }

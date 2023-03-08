@@ -9,7 +9,6 @@ public class BrowserUtil {
     public static void navigateToUrl(String url) {
         InfoLogger.info(String.format("navigateToUrl(\"%s\")", url));
         WebDriverProvider.getDriver().navigate().to(url);
-
     }
 
     public static String getCurrentTab() {

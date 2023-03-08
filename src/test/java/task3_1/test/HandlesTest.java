@@ -18,7 +18,7 @@ public class HandlesTest extends BaseTestClass {
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main page hasn't been opened");
 
         InfoLogger.info("Step 2. Click on \"Alerts, Frame & Windows\" button. In the menu click a \"Browser Windows\" button");
-        mainPageObject.clickAlertsFrameWindowsBtn();
+        mainPageObject.scrollThenClickAlertsFrameWindowsBtn();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
         alertsFrameWindowsPageObject.LeftPanel().scrollThenWindowsBrowserBtn();
         BrowserWindowsPageObject browserWindowsPageObject = new BrowserWindowsPageObject();
@@ -26,7 +26,7 @@ public class HandlesTest extends BaseTestClass {
 
         InfoLogger.info("Step 3. Click on \"New Tab\" button.");
         String currentTab = BrowserUtil.getCurrentTab();
-        browserWindowsPageObject.clickTabBtn();
+        browserWindowsPageObject.scrollThenClickTabBtn();
         BrowserUtil.switchToNewTab();
         SamplePageObject samplePageObject = new SamplePageObject();
         Assert.assertTrue(samplePageObject.formIsOpened(), "SamplePage hasn't been opened");
@@ -44,7 +44,7 @@ public class HandlesTest extends BaseTestClass {
 
         InfoLogger.info("Step 6. Click \"Home\" link");
         currentTab = BrowserUtil.getCurrentTab();
-        linksPageObject.clickLinkHome();
+        linksPageObject.scrollThenClickLinkHome();
         BrowserUtil.switchToNewTab();
         Assert.assertTrue(mainPageObject.formIsOpened(), "New tab with Main Page hasn't been opened");
 
@@ -53,6 +53,5 @@ public class HandlesTest extends BaseTestClass {
         Assert.assertTrue(linksPageObject.formIsOpened(), "Page Links hasn't been opened");
 
         InfoLogger.info("Test \"Handles\" is finished.");
-
     }
 }

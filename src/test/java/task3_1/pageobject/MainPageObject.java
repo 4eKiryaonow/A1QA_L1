@@ -23,7 +23,16 @@ public class MainPageObject extends BaseForm {
     public void clickAlertsFrameWindowsBtn() {
 
         allertsFrameWindowsBtn.clickElement();
+    }
 
+    public void scrollAlertsFrameWindowsBtn() {
+
+        allertsFrameWindowsBtn.scrollDownElement();
+    }
+
+    public void scrollThenClickAlertsFrameWindowsBtn() {
+        scrollAlertsFrameWindowsBtn();
+        clickAlertsFrameWindowsBtn();
     }
 
     public void clickElementsBtn() {
@@ -31,7 +40,13 @@ public class MainPageObject extends BaseForm {
         elementsBtn.clickElement();
     }
 
+    public void scrollElementsBtn() {
 
+        elementsBtn.scrollDownElement();
+    }
 
-
+    public void scrollThenClickElementsBtn() {
+        scrollElementsBtn();
+        clickElementsBtn();
+    }
 }

@@ -13,7 +13,6 @@ public class AlertUtil {
     public static void acceptAlert() {
         InfoLogger.info("acceptAlert()");
         ConditionalWait.alertIsPresent().accept();
-
     }
 
     public static void dismissAlert() {
@@ -30,5 +29,4 @@ public class AlertUtil {
         InfoLogger.info(String.format("SendTextToAlert(\"%s\")", text));
         ConditionalWait.alertIsPresent().sendKeys(text);
     }
-
 }

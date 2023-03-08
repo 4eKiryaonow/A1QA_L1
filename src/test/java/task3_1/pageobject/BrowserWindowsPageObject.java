@@ -20,8 +20,16 @@ public class BrowserWindowsPageObject extends BaseForm {
     }
 
     public void clickTabBtn() {
-
         newTabBtn.clickElement();
+    }
+
+    public void scrollTabBtn() {
+        newTabBtn.scrollDownElement();
+    }
+
+    public void scrollThenClickTabBtn() {
+        scrollTabBtn();
+        clickTabBtn();
     }
 
     public LeftPanelComponent leftPanel() {

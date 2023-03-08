@@ -12,31 +12,24 @@ public class ParentFrameComponent extends BaseFrame {
     private ChildFrameComponent childFrameComponent;
 
     public ParentFrameComponent() {
-
         super(parentFrameLabel, parentFrameLocator, "ParentFrame");
         this.childFrameComponent = new ChildFrameComponent();
     }
 
     public ChildFrameComponent childFrame() {
-
         return this.childFrameComponent;
     }
 
     public void switchToParentFrame() {
-
         this.switchToFrame();
     }
 
 
     public String getParentFrameText() {
-
         return parentFrameLabel.getTextOfElement();
     }
 
     public String getChildFrameText() {
-
         return this.childFrame().getChildFrameText();
     }
-
-
 }

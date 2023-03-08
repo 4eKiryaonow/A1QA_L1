@@ -21,6 +21,5 @@ public class NestedFramesPageObject extends BaseForm {
     public LeftPanelComponent leftPanel() {
 
         return this.leftPanel;
-
     }
 }

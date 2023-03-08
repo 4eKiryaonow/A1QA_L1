@@ -22,14 +22,14 @@ public class AlertsTest extends BaseTestClass {
         Assert.assertTrue(mainPageObject.formIsOpened(), "Main page hasn't been opened");
 
         InfoLogger.info("Step 2. Click on Alerts, Frame & Windows button. In a menu click Alerts button.");
-        mainPageObject.clickAlertsFrameWindowsBtn();
+        mainPageObject.scrollThenClickAlertsFrameWindowsBtn();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
         alertsFrameWindowsPageObject.LeftPanel().ScrollThenClickAlertsBtn();
         AlertsPageObject alertsPageObject = new AlertsPageObject();
         Assert.assertTrue(alertsPageObject.formIsOpened(), "Alerts page has not been opened");
 
         InfoLogger.info("Step 3. Click on \"Click button to see alert\" button.");
-        alertsPageObject.clickToSeeAlertBtn();
+        alertsPageObject.scrollThenClickSeeAlertBtn();
         Assert.assertEquals(AlertUtil.getAlertText(), data.getSeeAlertText(),
                 String.format("Alert with text \"%s\" has not been open.", data.getSeeAlertText()));
 
@@ -38,7 +38,7 @@ public class AlertsTest extends BaseTestClass {
         Assert.assertFalse(AlertUtil.alertIsPresent(), "Alert has not been closed");
 
         InfoLogger.info("Step 5. Click on \"On button click, confirm box will appear\" button");
-        alertsPageObject.clickConfirmBoxBtn();
+        alertsPageObject.scrollThenClickConfirmBoxBtn();
         Assert.assertEquals(AlertUtil.getAlertText(), data.getConfirmAlertText(),
                 String.format("Alert with text \"%s\" has not been opened", data.getConfirmAlertText()));
 
@@ -49,7 +49,7 @@ public class AlertsTest extends BaseTestClass {
                 String.format("Text \"%s\" doesn't appear om the page", data.getResultConfirmAlertText()));
 
         InfoLogger.info("Step 7. Click on \"On button click, prompt box will appear\" button");
-        alertsPageObject.clickPromptBoxBtn();
+        alertsPageObject.scrollThenClickPromptBoxBtn();
         Assert.assertEquals(AlertUtil.getAlertText(), data.getPromptBoxAlertText(),
                 String.format("Alert with text \"%s\" hasn't been opened", data.getPromptBoxAlertText()));
 

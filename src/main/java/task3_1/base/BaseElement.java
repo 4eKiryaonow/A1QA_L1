@@ -27,6 +27,8 @@ public abstract class BaseElement {
 
     public WebElement findElement() {
         InfoLogger.info(String.format("findElement(\"%s\") for: %s", this.locator, this.getElementName()));
+
+        ConditionalWait.waitToBePresented(locator);
         return this.driver.findElement(locator);
     }
 
@@ -61,6 +63,5 @@ public abstract class BaseElement {
     public By getLocator() {
         return locator;
     }
-
 
 }

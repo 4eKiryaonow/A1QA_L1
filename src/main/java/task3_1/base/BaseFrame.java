@@ -5,13 +5,11 @@ import task3_1.utils.FrameUtil;
 import task3_1.utils.InfoLogger;
 
 public abstract class BaseFrame {
-
     private By frameLocator;
     private BaseElement baseElement;
     private String formName;
 
     public BaseFrame(BaseElement element, By frameLocator, String formName) {
-
         this.baseElement = element;
         this.frameLocator = frameLocator;
         this.formName = formName;
@@ -28,7 +26,6 @@ public abstract class BaseFrame {
     }
 
     public String getFrameName() {
-
         return formName;
     }
 

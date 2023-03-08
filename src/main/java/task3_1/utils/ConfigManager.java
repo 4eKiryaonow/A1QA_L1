@@ -17,33 +17,22 @@ public class ConfigManager {
 
             config = ConfigReader.readConfig(new Config(), PATH_TO_CONFIG);
         }
-
         return config;
-
     }
 
     public static String getURL() {
-
         return getConfig().getUrl();
     }
 
     public static String getBrowser() {
-
         return getConfig().getBrowser();
-
     }
 
     public static int getWaitDuration() {
-
         return Integer.parseInt(getConfig().getWaitDuration());
-
     }
 
     public static List<String> getOptions() {
-
         return getConfig().getOptions();
-
     }
-
-
 }

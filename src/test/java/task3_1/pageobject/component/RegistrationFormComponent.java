@@ -23,63 +23,51 @@ public class RegistrationFormComponent extends BaseForm {
     private Button submitBtn = new Button(By.id("submit"), "SubmitButton");
 
     public RegistrationFormComponent() {
-
         super(regFormLabel, "RegistrationForm");
     }
 
     public void inputFirstName(String text) {
-
         firstName.inputValue(text);
     }
 
     public void inputLastName(String text) {
-
         lastName.inputValue(text);
     }
 
     public void inputEmail(String text) {
-
         email.inputValue(text);
     }
 
     public void inputAge(String text) {
-
         age.inputValue(text);
     }
 
     public void inputSalary(String text) {
-
         salary.inputValue(text);
     }
 
     public void inputDepartment(String text) {
-
         department.inputValue(text);
     }
 
     public void clickSubmitBtn() {
-
         submitBtn.clickElement();
     }
 
     public void scrollSubmitBtn() {
-
         submitBtn.scrollDownElement();
     }
 
     public void scrollThenClickBtn() {
-
         scrollSubmitBtn();
         clickSubmitBtn();
     }
 
     public void waitRegFormDisappears() {
-
         ConditionalWait.waitElementDisappears(regFormLabel);
     }
 
     public void enterUser(User user) {
-
         inputFirstName(user.getFirstName());
         inputLastName(user.getLastName());
         inputEmail(user.getEmail());
@@ -88,7 +76,5 @@ public class RegistrationFormComponent extends BaseForm {
         inputDepartment(user.getDepartment());
         scrollThenClickBtn();
         waitRegFormDisappears();
-
     }
-
 }

@@ -10,12 +10,10 @@ public class BottomFrame extends BaseFrame {
     private static Label bottomFrameLabel = new Label(By.id("sampleHeading"), "BottomFrameLabel");
 
     public BottomFrame() {
-
         super(bottomFrameLabel, bottomFrameLocator, "BottomFrame");
     }
 
     public String getBottomFrameText() {
-
         return bottomFrameLabel.getTextOfElement();
     }
 }

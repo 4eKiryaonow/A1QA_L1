@@ -24,7 +24,7 @@ public class IframeTest extends BaseTestClass {
         Assert.assertTrue(mainPageObject.formIsOpened(), "\"Main page\" hasn't been opened");
 
         InfoLogger.info("Step 2. Click  on \"Alerts, Frame & Windows\" button. In a menu click \"Nested Frames\" button");
-        mainPageObject.clickAlertsFrameWindowsBtn();
+        mainPageObject.scrollThenClickAlertsFrameWindowsBtn();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
         alertsFrameWindowsPageObject.LeftPanel().scrollThenClickNestedFramesBtn();
         NestedFramesPageObject nestedFramesPageObject = new NestedFramesPageObject();
@@ -50,6 +50,5 @@ public class IframeTest extends BaseTestClass {
         Assert.assertTrue(topFrameText.equals(bottomFrameText), "Text is not equals for both frames");
 
         InfoLogger.info("Test \"Iframe\" is finished.");
-
     }
 }

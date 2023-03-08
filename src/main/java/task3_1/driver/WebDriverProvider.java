@@ -8,7 +8,6 @@ import java.util.Locale;
 import java.util.Objects;
 
 public final class WebDriverProvider {
-
     private static WebDriver driver;
 
     private WebDriverProvider() {
@@ -18,7 +17,6 @@ public final class WebDriverProvider {
         if (Objects.isNull(driver)) {
             String browserName = ConfigManager.getBrowser();
             driver = WebDriverFactory.createDriver(Browser.valueOf(browserName.toUpperCase(Locale.ROOT)));
-
         }
         return driver;
     }
@@ -28,5 +26,4 @@ public final class WebDriverProvider {
         driver.quit();
         driver = null;
     }
-
 }

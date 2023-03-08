@@ -15,15 +15,10 @@ public class ChildFrameComponent extends BaseFrame {
    }
 
    public String getChildFrameText() {
-
        return childFrameLabel.getTextOfElement();
    }
 
     public void switchToChildFrame() {
-
         this.switchToFrame();
     }
-
-
-
 }

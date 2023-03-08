@@ -23,7 +23,6 @@ public class ConditionalWait {
 
         return new WebDriverWait(WebDriverProvider.getDriver(), duration)
                 .until(ExpectedConditions.alertIsPresent());
-
     }
 
     public static void waitElementDisappears(BaseElement element){
@@ -31,5 +30,9 @@ public class ConditionalWait {
                 .until(ExpectedConditions.invisibilityOfElementLocated(element.getLocator()));
     }
 
+    public static void waitToBePresented(By locator) {
 
+        new WebDriverWait(WebDriverProvider.getDriver(), duration)
+                .until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
 }

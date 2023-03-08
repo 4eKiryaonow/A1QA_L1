@@ -25,14 +25,11 @@ public class ConfigReader {
             InfoLogger.error(e.getMessage());
             throw new RuntimeException(e);
         }
-
         config.setBrowser((String) jsonObject.get("browser"));
         config.setOptions((List<String>) jsonObject.get("options"));
         config.setUrl((String) jsonObject.get("url"));
         config.setWaitDuration((String) jsonObject.get("waitDuration"));
 
         return config;
-
     }
-
 }

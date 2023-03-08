@@ -1,6 +1,5 @@
 package task3_1.test;
 
-import org.openqa.selenium.json.Json;
 import org.testng.annotations.DataProvider;
 import task3_1.models.User;
 import task3_1.util.JsonReader;
@@ -52,9 +51,6 @@ public class TestDataProvider {
             objects[i] = new Object[1];
             objects[i][0] = userList.get(i);
         }
-
         return objects;
-
     }
-
 }

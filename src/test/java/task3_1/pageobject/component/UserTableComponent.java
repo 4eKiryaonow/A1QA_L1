@@ -23,7 +23,6 @@ public class UserTableComponent extends BaseForm {
     private String dynamicLocatorUserButton = "//span[contains(@id, 'delete-record-%d')]";
 
     public UserTableComponent() {
-
         super(userTableLabel, "UserTable");
     }
 
@@ -36,7 +35,6 @@ public class UserTableComponent extends BaseForm {
                 element.findElements(tableCell.getLocator()).get(3).getText(),
                 element.findElements(tableCell.getLocator()).get(4).getText(),
                 element.findElements(tableCell.getLocator()).get(5).getText()
-
         );
     }
 
@@ -59,25 +57,30 @@ public class UserTableComponent extends BaseForm {
     public void deleteUserFromTable(User user) {
 
         int position = this.getUserRowNumber(user) + 1;
-        this.clickDeleteButton(position);
-
+        this.scrollDeleteBtn(position);
+        this.clickDeleteBtn(position);
+        ConditionalWait.waitElementDisappears(getDeleteBtn(position));
     }
 
-    public void clickDeleteButton(int row) {
+    public void clickDeleteBtn(int row) {
+        Button deleteBtn = this.getDeleteBtn(row);
+        deleteBtn.clickElement();
+    }
 
-        Button clickDeleteButton = new Button(By.xpath(String.format(dynamicLocatorUserButton, row)), "UserButton");
-        clickDeleteButton.clickElement();
-        ConditionalWait.waitElementDisappears(clickDeleteButton);
+    public void scrollDeleteBtn(int row) {
+        Button deleteBtn = this.getDeleteBtn(row);
+        deleteBtn.scrollDownElement();
+    }
 
+    public Button getDeleteBtn(int row) {
+
+        return new Button(By.xpath(String.format(dynamicLocatorUserButton, row)), "UserButton");
     }
 
     public int getUserRowNumber(User user) {
 
         return this.getListOfUsers().indexOf(user);
-
     }
-
-
 }
 
 

@@ -30,9 +30,7 @@ public class JsonReader {
             InfoLogger.error(e.getMessage());
             throw new RuntimeException(e);
         }
-
         return value;
-
     }
 
     public static String getStringFromJsonFile(String path, String keyName) {
@@ -48,9 +46,7 @@ public class JsonReader {
             InfoLogger.error(e.getMessage());
             throw new RuntimeException(e);
         }
-
         return value;
-
     }
 
     public static Map<String, User> getUserDataFromJsonFile(String path) {
@@ -67,13 +63,6 @@ public class JsonReader {
             InfoLogger.error(e.getMessage());
             throw new RuntimeException(e);
         }
-
         return dataFromJsonFile;
     }
-
-
-
-
-
-
 }

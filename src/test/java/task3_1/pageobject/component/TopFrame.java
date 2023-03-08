@@ -10,13 +10,10 @@ public class TopFrame extends BaseFrame {
     private static Label topFrameLabel = new Label(By.id("sampleHeading"), "TopFrameLabel");
 
     public TopFrame() {
-
         super(topFrameLabel, topFrameLocator, "TopFrame");
     }
 
     public String getTopLabelText() {
-
         return topFrameLabel.getTextOfElement();
     }
-
 }
