@@ -62,6 +62,17 @@ public class RegistrationFormComponent extends BaseForm {
         submitBtn.clickElement();
     }
 
+    public void scrollSubmitBtn() {
+
+        submitBtn.scrollDownElement();
+    }
+
+    public void scrollThenClickBtn() {
+
+        scrollSubmitBtn();
+        clickSubmitBtn();
+    }
+
     public void waitRegFormDisappears() {
 
         ConditionalWait.waitElementDisappears(regFormLabel);
@@ -75,7 +86,7 @@ public class RegistrationFormComponent extends BaseForm {
         inputAge(user.getAge());
         inputSalary(user.getSalary());
         inputDepartment(user.getDepartment());
-        clickSubmitBtn();
+        scrollThenClickBtn();
         waitRegFormDisappears();
 
     }
