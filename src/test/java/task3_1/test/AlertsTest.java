@@ -24,7 +24,7 @@ public class AlertsTest extends BaseTestClass {
         InfoLogger.info("Step 2. Click on Alerts, Frame & Windows button. In a menu click Alerts button.");
         mainPageObject.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
-        alertsFrameWindowsPageObject.LeftPanel().clickAlertsBtn();
+        alertsFrameWindowsPageObject.LeftPanel().ScrollThenClickAlertsBtn();
         AlertsPageObject alertsPageObject = new AlertsPageObject();
         Assert.assertTrue(alertsPageObject.formIsOpened(), "Alerts page has not been opened");
 

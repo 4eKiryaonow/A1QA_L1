@@ -20,7 +20,7 @@ public class HandlesTest extends BaseTestClass {
         InfoLogger.info("Step 2. Click on \"Alerts, Frame & Windows\" button. In the menu click a \"Browser Windows\" button");
         mainPageObject.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
-        alertsFrameWindowsPageObject.LeftPanel().clickWindowsBrowser();
+        alertsFrameWindowsPageObject.LeftPanel().scrollThenWindowsBrowserBtn();
         BrowserWindowsPageObject browserWindowsPageObject = new BrowserWindowsPageObject();
         Assert.assertTrue(browserWindowsPageObject.formIsOpened(), "BrowserWindows page hasn't been opened");
 
@@ -37,8 +37,8 @@ public class HandlesTest extends BaseTestClass {
         Assert.assertTrue(browserWindowsPageObject.formIsOpened(), "Browser Window page hasn't been opened");
 
         InfoLogger.info("Step 5. In the menu on the left click \"Elements\" -> \"Links\" button");
-        browserWindowsPageObject.leftPanel().clickElements();
-        browserWindowsPageObject.leftPanel().clickLinks();
+        browserWindowsPageObject.leftPanel().scrollThenClickElementsBtn();
+        browserWindowsPageObject.leftPanel().scrollThenClickLinksBtn();
         LinksPageObject linksPageObject = new LinksPageObject();
         Assert.assertTrue(linksPageObject.formIsOpened(), "Links Page hasn't been opened");
 

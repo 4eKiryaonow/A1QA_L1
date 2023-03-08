@@ -26,7 +26,7 @@ public class IframeTest extends BaseTestClass {
         InfoLogger.info("Step 2. Click  on \"Alerts, Frame & Windows\" button. In a menu click \"Nested Frames\" button");
         mainPageObject.clickAlertsFrameWindowsBtn();
         AlertsFrameWindowsPageObject alertsFrameWindowsPageObject = new AlertsFrameWindowsPageObject();
-        alertsFrameWindowsPageObject.LeftPanel().clickNestedFrames();
+        alertsFrameWindowsPageObject.LeftPanel().scrollThenClickNestedFramesBtn();
         NestedFramesPageObject nestedFramesPageObject = new NestedFramesPageObject();
         Assert.assertTrue(nestedFramesPageObject.formIsOpened(), "Page \"Nested Frames\" hasn't been opened");
         ParentFrameComponent parentFrameComponent = new ParentFrameComponent();
@@ -37,7 +37,7 @@ public class IframeTest extends BaseTestClass {
         parentFrameComponent.leaveFrame();
 
         InfoLogger.info("Step 3. Select \"Frames\" option in a left menu");
-        nestedFramesPageObject.leftPanel().clickFramesBtn();
+        nestedFramesPageObject.leftPanel().scrollThenClickFramesBtn();
         FramesPageObject framesPageObject = new FramesPageObject();
         Assert.assertTrue(framesPageObject.formIsOpened(), "Page \"Frames\" hasn't been opened");
         TopFrame topFrame = new TopFrame();

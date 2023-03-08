@@ -23,7 +23,7 @@ public class TablesTest extends BaseTestClass {
         InfoLogger.info("Step 2. Click on \"Elements\" button. In the menu click a \"Web Tables\" button");
         mainPageObject.clickElementsBtn();
         ElementsPageObject elementsPageObject = new ElementsPageObject();
-        elementsPageObject.LeftPanel().clickWebTables();
+        elementsPageObject.LeftPanel().scrollThenClickWebTablesBtn();
         WebTablePageObject webTablePageObject = new WebTablePageObject();
         Assert.assertTrue(webTablePageObject.formIsOpened(), "Page \"Web Table\" hasn't been opened");
 

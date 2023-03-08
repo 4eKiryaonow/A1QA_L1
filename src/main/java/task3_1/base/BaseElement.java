@@ -33,7 +33,7 @@ public abstract class BaseElement {
 
     public void clickElement() {
         InfoLogger.info(String.format("clickElement() for: %s", this.getElementName()));
-        scrollDownElement();
+
         ConditionalWait.waitToBeClickable(locator);
         findElement().click();
     }
