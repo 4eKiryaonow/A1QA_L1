@@ -1,6 +1,6 @@
 {
   "browser" : "chrome",
   "url" : "https://demoqa.com/",
-  "options" : ["start-maximized"],
+  "options" : ["start-maximized","--remote-allow-origins=*"],
   "waitDuration" : "10"
 }
