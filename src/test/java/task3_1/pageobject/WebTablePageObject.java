@@ -16,6 +16,7 @@ public class WebTablePageObject extends BaseForm {
     public WebTablePageObject() {
 
         super(webTableLabel, "WebTablePage");
+        userTable = new UserTableComponent();
     }
 
     public void clickAddBtn() {
@@ -33,6 +34,6 @@ public class WebTablePageObject extends BaseForm {
 
     public UserTableComponent userTable() {
 
-        return new UserTableComponent();
+        return this.userTable;
     }
 }

@@ -21,6 +21,14 @@ public class UserTableComponent extends BaseForm {
     private TextBox tableRow = new TextBox(By.cssSelector("div.rt-tr"), "RowTable");
     private TextBox tableCell = new TextBox(By.cssSelector("div.rt-td"), "TableCell");
     private String dynamicLocatorUserButton = "//span[contains(@id, 'delete-record-%d')]";
+    private static final int INDEX_FIRST_NAME = 0;
+    private static final int INDEX_SECOND_NAME = 1;
+    private static final int INDEX_EMAIL = 2;
+    private static final int INDEX_AGE = 3;
+    private static final int INDEX_SALARY = 4;
+    private static final int INDEX_DEPARTMENT = 5;
+
+
 
     public UserTableComponent() {
         super(userTableLabel, "UserTable");
@@ -29,12 +37,12 @@ public class UserTableComponent extends BaseForm {
     public User getUserFromRow(WebElement element) {
 
         return new User(
-                element.findElements(tableCell.getLocator()).get(0).getText(),
-                element.findElements(tableCell.getLocator()).get(1).getText(),
-                element.findElements(tableCell.getLocator()).get(2).getText(),
-                element.findElements(tableCell.getLocator()).get(3).getText(),
-                element.findElements(tableCell.getLocator()).get(4).getText(),
-                element.findElements(tableCell.getLocator()).get(5).getText()
+                element.findElements(tableCell.getLocator()).get(INDEX_FIRST_NAME).getText(),
+                element.findElements(tableCell.getLocator()).get(INDEX_SECOND_NAME).getText(),
+                element.findElements(tableCell.getLocator()).get(INDEX_EMAIL).getText(),
+                element.findElements(tableCell.getLocator()).get(INDEX_AGE).getText(),
+                element.findElements(tableCell.getLocator()).get(INDEX_SALARY).getText(),
+                element.findElements(tableCell.getLocator()).get(INDEX_DEPARTMENT).getText()
         );
     }
 
